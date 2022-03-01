@@ -4,13 +4,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const commonConfig = require("./webpack.common");
 const paths = require("../paths");
+const { generateAssetModulesOutput } = require("../../utils");
 
 module.exports = merge(commonConfig, {
   mode: "production",
   output: {
     clean: true,
     filename: "[name].[contenthash].js",
-    assetModuleFilename: "[name].[contenthash][ext][query]",
+    assetModuleFilename: generateAssetModulesOutput,
   },
   module: {
     rules: [

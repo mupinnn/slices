@@ -1,5 +1,5 @@
 const paths = require("../paths");
-const { generateHTMLEntries } = require("../../utils");
+const { generateHTMLEntries, generateAssetModulesOutput } = require("../../utils");
 
 module.exports = {
   target: ["web", "es5"],
@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: paths.build,
     filename: "[name].js",
-    assetModuleFilename: "[name][ext][query]",
+    assetModuleFilename: generateAssetModulesOutput,
   },
   module: {
     rules: [

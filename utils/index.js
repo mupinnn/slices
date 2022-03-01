@@ -26,6 +26,26 @@ function generateHTMLEntries() {
   });
 }
 
+/**
+ * Preserve assets (images, fonts, etc) folder structure in the output folder
+ * Reference: https://stackoverflow.com/a/68902490/7896147
+ */
+function generateAssetModulesOutput(pathData) {
+  const webpackMode = process.argv
+    .slice(2)
+    .filter(arg => arg.includes("--mode"))[0]
+    .split("=")[1];
+
+  const filePath = path.dirname(pathData.filename).split("/").slice(2).join("/");
+
+  if (webpackMode === "production") {
+    return `${filePath}/[name].[contenthash][ext][query]`;
+  }
+
+  return `${filePath}/[name][ext][query]`;
+}
+
 module.exports = {
   generateHTMLEntries,
+  generateAssetModulesOutput,
 };
