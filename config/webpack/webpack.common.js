@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const paths = require("../paths");
+const { generateHTMLEntries } = require("../../utils");
 
 module.exports = {
   target: ["web", "es5"],
@@ -29,10 +29,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: paths.src + "/index.html",
-      filename: "index.html",
-    }),
-  ],
+  plugins: generateHTMLEntries().concat([
+    // Another plugin here
+  ]),
 };
