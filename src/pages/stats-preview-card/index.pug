@@ -1,3 +1,10 @@
+-
+  const stats = [
+    { num: "10k+", title: "COMPANIES" },
+    { num: "314", title: "TEMPLATES" },
+    { num: "12M+", title: "QUERIES" }
+  ];
+
 doctype html
 html(lang="en")
   head
@@ -11,24 +18,20 @@ html(lang="en")
       href=require("./assets/images/favicon-32x32.png")
     )
     title Frontend Mentor | Stats preview card component
-
-    style.
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
   body
-    | Get insights that help your business grow.
+    main.container
+      article.card
+        .card-img
+        .card-body
+          h1.card-title Get #[span.text-highlight insights] that help your business grow.
+          p.
+            Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
 
-    | Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
+          .stats
+            each item in stats
+              .stats-item.
+                #[span.stats-item-number= item.num]
+                #[span.stats-item-title= item.title]
 
-    | 10k+ companies
-    | 314 templates
-    | 12m+ queries
-
-    #attribution.
-      Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") @mupinnn]
+    .attribution.
+      Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io/profile/mupinnn", target="_blank", rel="noopener noreferrer") @mupinnn]

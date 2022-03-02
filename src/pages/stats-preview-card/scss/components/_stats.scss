@@ -1,0 +1,35 @@
+.stats {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+
+    &-number {
+      font-size: 1.5rem;
+      font-weight: $font-bold;
+      color: $clr-white;
+    }
+
+    &-title {
+      font-family: $font-family-lexend-deca;
+      font-size: 0.85rem;
+      color: $clr-white-60;
+    }
+  }
+
+  @media screen and (min-width: 1178px) {
+    margin-top: 4.25rem;
+    flex-direction: row;
+    gap: 3.8rem;
+
+    &-item {
+      align-items: flex-start;
+    }
+  }
+}

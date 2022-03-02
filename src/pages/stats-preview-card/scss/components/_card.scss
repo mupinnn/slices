@@ -1,0 +1,94 @@
+.card {
+  --border-radius: 10px;
+
+  max-width: 328px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  background-color: $clr-dark-desaturated-blue;
+
+  border-radius: var(--border-radius);
+
+  &-img {
+    position: relative;
+    width: 100%;
+    height: 240px;
+
+    background: url('../assets/images/image-header-mobile.jpg') center no-repeat;
+    background-size: cover;
+
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      background-color: change-color($color: $clr-soft-violet, $lightness: 50%, $alpha: 0.4);
+
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+  }
+
+  &-body {
+    width: 100%;
+    padding: 2.5rem 2rem;
+
+    p {
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.65;
+      color: $clr-white-75;
+    }
+  }
+
+  &-title {
+    margin-bottom: 1rem;
+
+    text-align: center;
+    font-size: 1.725rem;
+    line-height: 1.175;
+    color: $clr-white;
+  }
+
+  @media screen and (min-width: 1178px) {
+    max-width: 1110px;
+    flex-direction: row-reverse;
+
+    &-img {
+      width: 49%;
+      height: auto;
+
+      border-radius: 0;
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+
+      &::after {
+        border-radius: 0;
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+    }
+
+    &-body {
+      width: 51%;
+      padding: 4.5rem 4.5rem 3.7rem;
+
+      p {
+        max-width: 380px;
+        text-align: left;
+      }
+    }
+
+    &-title {
+      margin-bottom: 1.5rem;
+
+      text-align: left;
+      font-size: 2.25rem;
+      line-height: 1.25;
+    }
+  }
+}
