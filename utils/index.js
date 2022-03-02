@@ -31,7 +31,7 @@ function generateHTMLEntries() {
   return templates.map(template => {
     const [pageDir, pageName] = template.split("/");
     const pageExt = path.extname(pageName);
-    let htmlPage;
+    let htmlPage = pageName;
 
     if ([".pug"].includes(pageExt)) {
       htmlPage = changeExtension(pageName, ".html");
