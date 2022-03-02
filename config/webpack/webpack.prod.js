@@ -49,7 +49,11 @@ module.exports = merge(commonConfig, {
   plugins: [
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: pathData => {
+        return pathData.chunk.name === "home"
+          ? "[name].[contenthash].css"
+          : "[name]/[name].[contenthash].css";
+      },
     }),
   ],
   optimization: {
