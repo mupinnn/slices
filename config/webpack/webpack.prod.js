@@ -10,7 +10,11 @@ module.exports = merge(commonConfig, {
   mode: "production",
   output: {
     clean: true,
-    filename: "[name].[contenthash].js",
+    filename: pathData => {
+      return pathData.chunk.name === "home"
+        ? "[name].[contenthash].js"
+        : "[name]/[name].[contenthash].js";
+    },
     assetModuleFilename: generateAssetModulesOutput,
   },
   module: {

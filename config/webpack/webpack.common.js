@@ -1,9 +1,9 @@
 const paths = require("../paths");
-const { generateHTMLEntries, generateAssetModulesOutput } = require("../../utils");
+const { generateEntries, generateHTMLEntries, generateAssetModulesOutput } = require("../../utils");
 
 module.exports = {
   target: ["web", "es5"],
-  entry: paths.src + "/index.js",
+  entry: generateEntries(),
   output: {
     path: paths.build,
     filename: "[name].js",

@@ -4,6 +4,24 @@ const fg = require("fast-glob");
 const paths = require("../config/paths");
 const { changeExtension } = require("./helpers");
 
+function generateEntries() {
+  const entryFiles = fg.sync("**/entry.js", {
+    cwd: "src/pages",
+    deep: 2,
+
+    // exclude `pages/entry.js` or any files that directly lives in `pages` dir
+    ignore: ["./*.*"],
+  });
+
+  const entries = {};
+  entryFiles.forEach(entry => {
+    const [dir, _] = entry.split("/");
+    entries[dir] = `${paths.src}/pages/${entry}`;
+  });
+
+  return entries;
+}
+
 function generateHTMLEntries() {
   const templates = fg.sync("**/*.{html,pug}", {
     cwd: "src/pages",
@@ -46,6 +64,7 @@ function generateAssetModulesOutput(pathData) {
 }
 
 module.exports = {
+  generateEntries,
   generateHTMLEntries,
   generateAssetModulesOutput,
 };
