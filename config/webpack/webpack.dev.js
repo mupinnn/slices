@@ -14,7 +14,7 @@ module.exports = merge(commonConfig, {
      * HMR only affect JS/CSS files.
      * Need to watch HTML files for changes to reload the dev server.
      */
-    watchFiles: paths.src + "/**/*.html",
+    watchFiles: paths.src + "/**/*.{html,pug}",
   },
   module: {
     rules: [
