@@ -7,10 +7,11 @@ setting up build tools and bundlers.
 ## Used Tools
 
 - Webpack v5
-- SASS + PostCSS
+- SCSS + PostCSS
 - Pug
 - Babel
 - Prettier
+- Plop
 
 I doesn't rule out the possibility to use another transpiler like `swc` or `esbuild`; adding
 another template engines such as Nunjucks; or might changing JavaScript to TypeScript.
