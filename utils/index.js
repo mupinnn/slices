@@ -40,6 +40,7 @@ function generateHTMLEntries() {
     return new HtmlWebpackPlugin({
       filename: pageDir === "home" ? htmlPage : `${pageDir}/${htmlPage}`,
       template: path.resolve(`${paths.src}/pages`, template),
+      chunks: [pageDir],
     });
   });
 }
