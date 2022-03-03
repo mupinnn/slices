@@ -1,11 +1,12 @@
 {
   "name": "slices",
   "version": "1.0.0",
-  "description": "A playground for slicing design into code.",
+  "description": "A front-end development tooling and slicing playground without using fancy [insert JS lib/fw here]",
   "keywords": [
     "slicing",
     "webpack",
-    "frontend mentor"
+    "frontend mentor",
+    "frontend"
   ],
   "author": {
     "name": "Ahmad Muwaffaq",
