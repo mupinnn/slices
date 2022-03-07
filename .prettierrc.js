@@ -15,5 +15,11 @@ module.exports = {
         singleQuote: true,
       },
     },
+    {
+      files: "**/*.{yml,yaml}",
+      options: {
+        singleQuote: true,
+      },
+    },
   ],
 };
