@@ -17,14 +17,15 @@ html(lang="en")
   body
     main.container
       article.card
-        figure.card-img
-          img(
-            src=require("./assets/images/image-equilibrium.jpg"),
-            alt="Image of Equilibrium NFT entry"
-          )
+        a(href="#")
+          figure.card-img
+            img(
+              src=require("./assets/images/image-equilibrium.jpg"),
+              alt="Image of Equilibrium NFT entry"
+            )
 
         .card-body
-          h1 Equilibrium #3429
+          h1 #[a(href="#") Equilibrium #3429]
           p Our Equilibrium collection promotes balance and calm.
 
           .details
@@ -41,7 +42,7 @@ html(lang="en")
               src=require("./assets/images/image-avatar.png"),
               alt="Avatar picture of Jules Wyvern"
             )
-            p Creation of #[span.creator-name Jules Wyvern]
+            p Creation of #[a.creator-name(href="#") Jules Wyvern]
 
     footer.attribution.
       Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io/profile/mupinnn", target="_blank", rel="noopener noreferrer") @mupinnn]

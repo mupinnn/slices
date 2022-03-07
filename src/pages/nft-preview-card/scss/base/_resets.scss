@@ -41,3 +41,16 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+a {
+  color: $clr-white;
+  text-decoration: none;
+
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-cyan;
+  }
+}
