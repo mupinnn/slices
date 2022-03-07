@@ -1,0 +1,103 @@
+.card {
+  --border-radius: 16px;
+
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  color: $clr-soft-blue;
+
+  background-color: $clr-very-dark-blue-card;
+
+  border-radius: var(--border-radius);
+
+  box-shadow: 0 20px 40px 0 darken($color: $clr-very-dark-blue-main, $amount: 5%);
+
+  &-img {
+    > img {
+      border-radius: 10px;
+    }
+  }
+
+  &-body {
+    margin-top: 1.4rem;
+    padding-bottom: 1.2rem;
+
+    border-bottom: 1px solid $clr-very-dark-blue-line;
+
+    h1 {
+      color: $clr-white;
+      font-weight: $font-semibold;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-top: 0.6rem;
+    }
+
+    .details {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      &-price,
+      &-due {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+          width: auto;
+          height: 16px;
+        }
+
+        span {
+          font-size: 0.98rem;
+          line-height: 1;
+        }
+      }
+
+      &-price span {
+        color: $clr-cyan;
+        font-weight: $font-semibold;
+      }
+    }
+
+    @media screen and (min-width: 1178px) {
+      padding-bottom: 1.5rem;
+
+      p {
+        font-size: 1.125rem;
+      }
+
+      .details {
+        margin-top: 1.55rem;
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: 1rem;
+
+    .creator {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .avatar {
+        width: 34px;
+        height: 34px;
+        border: 2px solid $clr-white;
+        border-radius: 50%;
+      }
+
+      &-name {
+        color: $clr-white;
+      }
+    }
+
+    @media screen and (min-width: 1178px) {
+      margin-top: 1.4rem;
+    }
+  }
+}
