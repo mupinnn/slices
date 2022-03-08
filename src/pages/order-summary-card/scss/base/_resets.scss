@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+
+  color: $clr-desaturated-blue;
+  font-size: 16px;
+  font-weight: $font-med;
+  font-family: $font-family-redhat-display;
+}
+
+body {
+  min-height: 100vh;
+
+  background-image: url('../assets/images/pattern-background-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 50%;
+  background-color: $clr-pale-blue;
+
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  @media screen and (min-width: 1178px) {
+    background-image: url('../assets/images/pattern-background-desktop.svg');
+  }
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,35 @@
+.plan {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+
+  background-color: rgba($clr-pale-blue, 0.275);
+
+  border-radius: 12px;
+
+  &-details {
+    margin-left: 1.3rem;
+    font-size: 0.9rem;
+
+    &-name {
+      color: $clr-dark-blue;
+      font-weight: $font-bold;
+    }
+  }
+
+  a {
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    font-size: 0.875rem;
+  }
+
+  @media screen and (min-width: 1178px) {
+    padding: 1.5rem;
+
+    &-details {
+      font-size: 1rem;
+    }
+  }
+}

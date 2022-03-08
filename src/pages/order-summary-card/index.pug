@@ -1,0 +1,42 @@
+include components/icon/music.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(
+      rel="icon",
+      type="image/png",
+      sizes="32x32",
+      href=require("./assets/images/favicon-32x32.png")
+    )
+    title Frontend Mentor | Order Summary Card Component
+  body
+    main.container
+      article.card
+        figure.card-img
+          img(
+            src=require("./assets/images/illustration-hero.svg"),
+            alt="An illustration of happy person listening to music"
+          )
+
+        .card-body
+          h1 Order Summary
+          p.
+            You can now listen to millions of songs, audiobooks, and podcasts on any device
+            anywhere you like!
+          .plan
+            +music-icon
+            .plan-details
+              p.plan-details-name Annual Plan
+              span.plan-details-price $59.99/year
+            a.btn.btn-link(href="#") Change
+
+        .card-footer
+          button.btn.btn-block.btn-primary Proceed to Payment
+          a.btn.btn-block(href="#") Cancel Order
+
+    footer.attribution.
+      Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io/profile/mupinnn", target="_blank", rel="noopener noreferrer") @mupinnn]

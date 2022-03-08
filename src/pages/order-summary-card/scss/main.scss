@@ -1,0 +1,12 @@
+// Reference: https://sass-guidelin.es/#architecture
+
+@import 'modern-normalize/modern-normalize.css';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+@import './abstracts';
+@import './base';
+@import './layout';
+@import './components';
+@import './pages';

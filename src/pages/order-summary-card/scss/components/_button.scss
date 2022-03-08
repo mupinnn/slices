@@ -1,0 +1,53 @@
+.btn {
+  display: inline-block;
+  padding: 0.75rem;
+
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  color: $clr-desaturated-blue;
+  font-size: 1rem;
+  font-weight: $font-bold;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  vertical-align: middle;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  &:hover {
+    color: $clr-dark-blue;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-link {
+    color: $clr-bright-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: lighten($clr-bright-blue, 10%);
+      text-decoration: none;
+    }
+  }
+
+  &-primary {
+    color: $clr-very-pale-blue;
+    background-color: $clr-bright-blue;
+    border-color: $clr-bright-blue;
+    box-shadow: 0 10px 20px 0 rgba($clr-dark-blue, 0.5);
+
+    &:hover {
+      color: $clr-very-pale-blue;
+      background-color: lighten($clr-bright-blue, 10%);
+      border-color: lighten($clr-bright-blue, 10%);
+    }
+  }
+}
