@@ -19,6 +19,7 @@
     "build": "webpack --mode=production",
     "prettify": "prettier -w -c \"./src/**/*.{html,scss,sass,js}\""
   },
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
