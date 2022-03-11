@@ -1,4 +1,4 @@
-module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
+export default function (/** @type {import('plop').NodePlopAPI} */ plop) {
   plop.setGenerator("page", {
     description: "Create new page for your next slices",
     prompts: [
@@ -20,4 +20,4 @@ module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
       },
     ],
   });
-};
+}

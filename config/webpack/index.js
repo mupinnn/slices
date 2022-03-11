@@ -1,7 +1,2 @@
-const devConfig = require("./webpack.dev");
-const prodConfig = require("./webpack.prod");
-
-module.exports = {
-  devConfig,
-  prodConfig,
-};
+export { default as devConfig } from "./webpack.dev.js";
+export { default as prodConfig } from "./webpack.prod.js";
