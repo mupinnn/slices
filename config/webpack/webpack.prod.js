@@ -1,12 +1,12 @@
-const { ProgressPlugin } = require("webpack");
-const { merge } = require("webpack-merge");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const commonConfig = require("./webpack.common");
-const paths = require("../paths");
-const { generateAssetModulesOutput } = require("../../utils");
+import webpack from "webpack";
+import { merge } from "webpack-merge";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import commonConfig from "./webpack.common.js";
+import paths from "../paths.js";
+import { generateAssetModulesOutput } from "../../utils/index.js";
 
-module.exports = merge(commonConfig, {
+const prodConfig = merge(commonConfig, {
   mode: "production",
   output: {
     clean: true,
@@ -47,7 +47,7 @@ module.exports = merge(commonConfig, {
     ],
   },
   plugins: [
-    new ProgressPlugin(),
+    new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: pathData => {
         return pathData.chunk.name === "home"
@@ -60,3 +60,5 @@ module.exports = merge(commonConfig, {
     minimizer: ["...", new CssMinimizerPlugin()],
   },
 });
+
+export default prodConfig;

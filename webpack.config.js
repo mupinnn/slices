@@ -1,6 +1,6 @@
-const { devConfig, prodConfig } = require("./config/webpack");
+import { devConfig, prodConfig } from "./config/webpack/index.js";
 
-module.exports = (_, args) => {
+export default (_, args) => {
   switch (args.mode) {
     case "development":
       return devConfig;

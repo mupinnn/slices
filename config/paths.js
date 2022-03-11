@@ -1,6 +1,8 @@
-const path = require("path");
+import { fileURLToPath } from "url";
 
-module.exports = {
-  src: path.resolve(__dirname, "../src"),
-  build: path.resolve(__dirname, "../dist"),
+const paths = {
+  src: fileURLToPath(new URL("../src", import.meta.url)),
+  build: fileURLToPath(new URL("../dist", import.meta.url)),
 };
+
+export default paths;

@@ -1,8 +1,8 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const fg = require("fast-glob");
-const paths = require("../config/paths");
-const { changeExtension } = require("./helpers");
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import fg from "fast-glob";
+import paths from "../config/paths.js";
+import { changeExtension } from "./helpers.js";
 
 function generateEntries() {
   const entryFiles = fg.sync("**/entry.js", {
@@ -64,8 +64,4 @@ function generateAssetModulesOutput(pathData) {
   return `${filePath}/[name][ext][query]`;
 }
 
-module.exports = {
-  generateEntries,
-  generateHTMLEntries,
-  generateAssetModulesOutput,
-};
+export { generateEntries, generateHTMLEntries, generateAssetModulesOutput };

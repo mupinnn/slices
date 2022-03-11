@@ -1,7 +1,11 @@
-const paths = require("../paths");
-const { generateEntries, generateHTMLEntries, generateAssetModulesOutput } = require("../../utils");
+import paths from "../paths.js";
+import {
+  generateEntries,
+  generateHTMLEntries,
+  generateAssetModulesOutput,
+} from "../../utils/index.js";
 
-module.exports = {
+const commonConfig = {
   target: ["web", "es5"],
   entry: generateEntries(),
   output: {
@@ -33,3 +37,5 @@ module.exports = {
     // Another plugin here
   ]),
 };
+
+export default commonConfig;
