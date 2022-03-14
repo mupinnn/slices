@@ -1,24 +1,35 @@
+---
+title: "{{name}}"
+description: Short description about the project
+screenshot: ./screenshot.png
+source:
+  author:
+    name: the name where to get the design or slicing challenge (frontend mentor, etc)
+    url: socials or website
+  url:
+    design: link to the design source here
+    gh_repo: link to the github repository
+    live: link to the live site
+difficulty: "choose between: newbie | junior | intermediate | advanced | guru"
+---
+
 # {{name}}
 
-Describe a little bit about the project here
+Describe a little bit about the project here. This README structure is inherited
+from [Frontend Mentor](https://www.frontendmentor.io/) challenges [readme template](https://github.com/frontendmentorio/faq-accordion-card/blob/main/README-template.md).
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+<!--
+  Table of contents will be generated automatically on build-time based
+  on this document heading(s) using `remark-toc`
+-->
 
 ## Overview
 
 ### The challenge
+
+Describe and explain the challenge of the project. As example:
 
 Users should be able to:
 
@@ -26,18 +37,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![Put the preview screenshot here](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+Add link that related to the project itself. As an instance: Live site/preview
+link; solution link (if the challenge/project come from Frontend Mentor); the
+design source (figma, dribbble, etc).
+
+- [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
@@ -50,7 +58,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 ### What I learned
 
