@@ -1,3 +1,18 @@
+---
+title: NFT Preview Card Component
+description: A simple card component with image on top + overlay
+screenshot: ./screenshot.png
+source:
+  author:
+    name: Frontend Mentor
+    url: https://www.frontendmentor.io/
+  url:
+    design: https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U
+    gh_repo: https://github.com/mupinnn/slices/tree/main/src/pages/nft-preview-card
+    live: https://mupinnn.github.io/slices/nft-preview-card
+difficulty: newbie
+---
+
 # Frontend Mentor - NFT Preview Card Component Solution
 
 This is a solution to the ["NFT Preview Card Component" challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects.

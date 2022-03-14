@@ -1,3 +1,18 @@
+---
+title: Stats Preview Card Component
+description: A simple card component with image side-by-side (desktop) and top-bottom (mobile)
+screenshot: ./screenshot.png
+source:
+  author:
+    name: Frontend Mentor
+    url: https://www.frontendmentor.io/
+  url:
+    design: https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62
+    gh_repo: https://github.com/mupinnn/slices/tree/main/src/pages/stats-preview-card
+    live: https://mupinnn.github.io/slices/stats-preview-card
+difficulty: newbie
+---
+
 # Frontend Mentor - Stats Preview Card Component Solution
 
 This is a solution to the ["Stats Preview Card Component" challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -57,7 +72,7 @@ list too!
 ### Useful resources
 
 - [SASS Guidelines](https://sass-guidelin.es/#architecture) - I really like the `7-1` pattern
-for organizing my SASS files.
+  for organizing my SASS files.
 
 ## Author
 

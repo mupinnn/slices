@@ -1,3 +1,18 @@
+---
+title: Order Summary Card Component
+description: A simple card component with image on top
+screenshot: ./screenshot.png
+source:
+  author:
+    name: Frontend Mentor
+    url: https://www.frontendmentor.io/
+  url:
+    design: https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj
+    gh_repo: https://github.com/mupinnn/slices/tree/main/src/pages/order-summary-card
+    live: https://mupinnn.github.io/slices/order-summary-card
+difficulty: newbie
+---
+
 # Frontend Mentor - Order Summary Card Component Solution
 
 This is a solution to the ["Order Summary Card Component" challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj).
