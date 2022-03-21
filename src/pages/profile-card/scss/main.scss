@@ -1,0 +1,11 @@
+// Reference: https://sass-guidelin.es/#architecture
+
+@import 'modern-normalize/modern-normalize.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@import './abstracts';
+@import './base';
+@import './layout';
+@import './components';
+@import './pages';

@@ -1,0 +1,42 @@
+-
+  const stats = [
+    { num: "80K", title: "Followers" },
+    { num: "803K", title: "Likes" },
+    { num: "1.4K", title: "Photos" }
+  ];
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(
+      rel="icon",
+      type="image/png",
+      sizes="32x32",
+      href=require("./assets/images/favicon-32x32.png")
+    )
+    title Frontend Mentor | Profile Card Component
+  body
+    main.container
+      article.card
+        figure.card-img
+          img(src=require("./assets/images/bg-pattern-card.svg"), alt="")
+
+        .card-body
+          .profile
+            figure.profile-avatar
+              img(src=require("./assets/images/image-victor.jpg"), alt="Avatar picture of Victor")
+            h1 Victor Crest #[span.profile-age 26]
+            span.profile-location London
+
+        .card-footer
+          .stats
+            each item in stats
+              .stats-item.
+                #[span.stats-item-number= item.num]
+                #[span.stats-item-title= item.title]
+
+    footer.attribution.
+      Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io/profile/mupinnn", target="_blank", rel="noopener noreferrer") @mupinnn]
