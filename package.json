@@ -1,7 +1,7 @@
 {
   "name": "slices",
   "version": "1.0.0",
-  "description": "A front-end development tooling and slicing playground without using fancy [insert JS lib/fw here]",
+  "description": "A front-end development tooling and slicing playground without using fancy [insert JS UI lib/fw here]",
   "keywords": [
     "slicing",
     "webpack",
