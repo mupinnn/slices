@@ -47,7 +47,7 @@ html(lang="en")
 
         .card-body
           h1 FAQ
-          section.accordion
+          .accordion
             each item in faq
               details.accordion-item(open=item.isOpen)
                 summary.accordion-item__title= item.q
