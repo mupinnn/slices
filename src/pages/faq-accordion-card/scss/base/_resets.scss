@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-weight: $font-reg;
+  font-family: $font-family-kumbh-sans;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  background-image: linear-gradient(to top, $clr-soft-blue, $clr-soft-violet);
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
