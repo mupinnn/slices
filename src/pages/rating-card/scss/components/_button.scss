@@ -1,0 +1,26 @@
+.btn {
+  width: 100%;
+  display: block;
+  padding: 0.8rem;
+
+  color: $clr-white;
+  font-size: 0.875rem;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  background: $clr-orange;
+
+  border: none;
+  border-radius: 50rem;
+
+  vertical-align: middle;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $clr-orange;
+    background-color: $clr-white;
+  }
+}

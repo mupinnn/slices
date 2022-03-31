@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.5rem;
+
+  background-color: mix($clr-dark-blue, $clr-very-dark-blue);
+
+  border-radius: 1rem;
+
+  &#rating-done {
+    text-align: center;
+    align-items: center;
+  }
+
+  .star-ornament {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.8rem;
+    background-color: $clr-dark-blue;
+    border-radius: 50%;
+  }
+
+  &-title {
+    font-size: 1.675rem;
+  }
+
+  p {
+    color: $clr-light-grey;
+    font-size: 0.875rem;
+  }
+
+  .selected-rating {
+    padding: 0.25rem 0.75rem;
+
+    font-size: 0.875rem;
+    color: $clr-orange;
+
+    background-color: $clr-dark-blue;
+
+    border-radius: 50rem;
+  }
+}

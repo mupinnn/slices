@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(
+      rel="icon",
+      type="image/png",
+      sizes="32x32",
+      href=require("./assets/images/favicon-32x32.png")
+    )
+    title Frontend Mentor | Interactive Rating Card Component
+  body
+    main.container
+      form#rating.card
+        .star-ornament
+          img(src=require("./assets/images/icon-star.svg"), alt="")
+
+        h2.card-title How did we do?
+        p.
+          Please let us know how we did with your support request.
+          All feedback is appreciated to help us improve our offering!
+
+        .rate
+          - for (let i = 1; i <= 5; i++)
+            .rate-input
+              label.sr-only(for="rating", aria-hidden).
+                Give #{ i } of 5 rating
+              input(type="radio", name="rating", value=i)
+
+        button.btn(type="submit") SUBMIT
+
+      article#rating-done.card.hidden
+        img.thank-you(src=require("./assets/images/illustration-thank-you.svg"), alt="")
+
+        p.selected-rating You selected "rate" out of 5
+
+        h2.card-title Thank you!
+        p.
+          We appreciate you taking the time to give a rating. If you
+          ever need more support, don't hesitate to get in touch!
+
+    footer.attribution.
+      Challenge by #[a(href="https://www.frontendmentor.io?ref=challenge", target="_blank", rel="noopener noreferrer") Frontend Mentor]. Coded by #[a(href="https://www.frontendmentor.io/profile/mupinnn", target="_blank", rel="noopener noreferrer") @mupinnn]

@@ -1,0 +1,45 @@
+.rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input[type='radio'] {
+      position: relative;
+      padding: 1.35rem;
+      color: $clr-light-grey;
+      font-size: 0.875rem;
+      font-weight: $font-bold;
+      background-color: $clr-dark-blue;
+      border-radius: 50%;
+      appearance: none;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      &::before {
+        content: attr(value);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        background-color: $clr-med-grey;
+      }
+
+      &:checked {
+        background-color: $clr-orange;
+      }
+
+      &:hover,
+      &:checked {
+        color: $clr-white;
+      }
+    }
+  }
+}

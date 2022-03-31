@@ -1,0 +1,15 @@
+// Reference: https://sass-guidelin.es/#architecture
+
+@import 'modern-normalize/modern-normalize.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+@import './abstracts';
+@import './base';
+@import './layout';
+@import './components';
+@import './pages';
+
+// Import utility classes in the last, so it can override
+// other property without using `!important`
+@import './abstracts/utilities';
