@@ -25,9 +25,9 @@ html(lang="en")
         .rate
           - for (let i = 1; i <= 5; i++)
             .rate-input
-              label.sr-only(for="rating", aria-hidden).
+              label.sr-only(for=`rating-${i}`).
                 Give #{ i } of 5 rating
-              input(type="radio", name="rating", value=i)
+              input(id=`rating-${i}`, type="radio", name="rating", value=i)
 
         button.btn(type="submit") SUBMIT
 
