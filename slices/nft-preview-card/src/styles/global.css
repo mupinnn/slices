@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit Variable", sans-serif;
+  --color-blue-*: initial;
+  --color-blue-500: hsl(215, 51%, 70%);
+  --color-blue-950: hsl(217, 54%, 11%);
+  --color-blue-900: hsl(216, 50%, 16%);
+  --color-blue-800: hsl(215, 32%, 27%);
+  --color-cyan-400: hsl(178, 100%, 50%);
+}

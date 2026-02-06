@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import DefaultLayout from "../layouts/default-layout.astro";
+import thumbnailImage from "../assets/images/image-equilibrium.jpg";
+import EthIcon from "../assets/images/icon-ethereum.svg";
+import ClockIcon from "../assets/images/icon-clock.svg";
+import avatarImage from "../assets/images/image-avatar.png";
+---
+
+<DefaultLayout>
+  <div
+    class="flex w-full max-w-[320px] flex-col rounded-2xl bg-blue-900 p-5 min-[1440px]:max-w-[354px] min-[1440px]:p-6.5 min-[1440px]:pb-8"
+  >
+    <div class="group relative rounded-lg">
+      <Image
+        src={thumbnailImage}
+        alt=""
+        height={280}
+        width={280}
+        class="size-full rounded-lg object-cover"
+      />
+    </div>
+
+    <div class="mt-6 flex flex-col gap-4 text-white">
+      <h1 class="text-[22px] leading-[26px] font-semibold">Equilibrium #3429</h1>
+      <p class="text-blue-500 min-[1440px]:text-lg min-[1440px]:leading-normal">
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      <div class="flex items-center justify-between min-[1440px]:mt-1">
+        <div class="flex items-center gap-1.5">
+          <EthIcon />
+          <p class="font-semibold text-cyan-400">0.041 ETH</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <ClockIcon />
+          <p class="text-blue-500">3 days left</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 border-blue-800 min-[1440px]:my-5" />
+
+    <div class="flex items-center gap-4">
+      <Image
+        src={avatarImage}
+        alt=""
+        width={32}
+        height={32}
+        class="rounded-full border border-white object-cover"
+      />
+      <p class="font-light text-blue-500">
+        Creation of <span class="text-white">Jules Wyvern</span>
+      </p>
+    </div>
+  </div>
+</DefaultLayout>
