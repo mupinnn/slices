@@ -1,21 +1,28 @@
-export default function (/** @type {import('plop').NodePlopAPI} */ plop) {
+export default function (/** @type {import('plop').NodePlopApi} */ plop) {
   plop.setGenerator("page", {
-    description: "Create new page for your next slices",
+    description: "Create new project for your next slices",
     prompts: [
       {
         type: "input",
         name: "name",
-        message: "Page/project name (lower-kebab-case):",
+        message: "Project name (lower-kebab-case):",
+      },
+      {
+        type: "list",
+        name: "template",
+        message: "Choose a template:",
+        choices: ["astro"],
       },
     ],
     actions: [
       {
         type: "addMany",
-        base: "templates/page",
-        templateFiles: "templates/page/**/*",
-        destination: "src/pages/{{name}}",
+        base: "templates/{{template}}",
+        templateFiles: "templates/{{template}}/**/*",
+        destination: "slices/{{name}}",
         globOptions: {
           dot: true,
+          ignore: ["**/.astro/**", "**/.turbo/**", "**/dist/**", "**/node_modules/**"],
         },
       },
     ],
