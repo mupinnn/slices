@@ -1,0 +1,32 @@
+---
+import "@fontsource-variable/red-hat-display";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Order Summary Card - Frontend Mentor</title>
+  </head>
+  <body class="flex min-h-screen flex-col items-center p-6 pt-18 min-[1440px]:pt-26">
+    <slot />
+
+    <footer
+      class="mt-10 text-center text-sm text-balance text-gray-600 [&_a]:text-blue-700 [&_a]:underline"
+    >
+      Challenge by <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener noreferrer">Frontend Mentor</a
+      >. Coded by <a
+        href="https://www.frontendmentor.io/profile/mupinnn"
+        target="_blank"
+        rel="noopener noreferrer">@mupinnn</a
+      >
+    </footer>
+  </body>
+</html>
