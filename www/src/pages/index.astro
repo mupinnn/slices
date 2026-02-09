@@ -1,0 +1,17 @@
+---
+import { readdir } from "node:fs/promises";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import DefaultLayout from "../layouts/default-layout.astro";
+
+const sliceFiles = await readdir("../slices", { withFileTypes: true });
+const sliceDirectories = await sliceFiles
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name);
+---
+
+<DefaultLayout>
+  <section class="flex flex-col gap-2">
+    {sliceDirectories.map(dir => <a href={`/slices/${dir}`}>{dir}</a>)}
+  </section>
+</DefaultLayout>

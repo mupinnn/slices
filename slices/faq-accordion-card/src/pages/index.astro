@@ -1,0 +1,62 @@
+---
+import DefaultLayout from "../layouts/default-layout.astro";
+import ArrowDownIcon from "../assets/images/icon-arrow-down.svg";
+
+const faqs = [
+  {
+    q: "How many team members can I invite?",
+    a: "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.",
+    isOpen: false,
+  },
+  {
+    q: "What is the maximum file upload size?",
+    a: "No more than 2GB. All files in your account must fit your allotted storage space.",
+    isOpen: true,
+  },
+  {
+    q: "How do I reset my password?",
+    a: "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.",
+    isOpen: false,
+  },
+  {
+    q: "Can I cancel my subscription?",
+    a: "Yes! Send us a message and we'll process your request no questions asked.",
+    isOpen: false,
+  },
+  {
+    q: "Do you provide additional support?",
+    a: "Chat and email support is available 24/7. Phone lines are open during normal business hours.",
+    isOpen: false,
+  },
+];
+---
+
+<DefaultLayout>
+  <div
+    class="relative flex w-full max-w-[328px] flex-col rounded-3xl bg-white shadow-2xl min-[1440px]:max-w-[964px] min-[1440px]:flex-row"
+  >
+    <div class="card-illustration"></div>
+    <div
+      class="px-6 pt-32 pb-12 min-[1440px]:ml-auto min-[1440px]:w-[500px] min-[1440px]:pt-15 min-[1440px]:pr-28 min-[1440px]:pb-18 min-[1440px]:pl-13"
+    >
+      <h1 class="mb-2 text-center text-[32px] font-bold min-[1440px]:mb-4 min-[1440px]:text-left">
+        FAQ
+      </h1>
+      <div class="text-text-dark-gray-blue flex flex-col">
+        {
+          faqs.map(faq => (
+            <details
+              open={faq.isOpen}
+              class="border-divider open:[&_summary]:text-text-blue cursor-pointer border-b py-4 open:[&_summary]:mb-2.5 open:[&_summary]:font-bold open:[&_svg]:rotate-180"
+            >
+              <summary class="hover:text-text-red flex items-center justify-between gap-2 text-sm text-[13px] min-[1440px]:text-[14.5px]">
+                {faq.q} <ArrowDownIcon />
+              </summary>
+              <p class="text-text-dark-gray-blue/75 pr-4 text-xs leading-4.5">{faq.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</DefaultLayout>

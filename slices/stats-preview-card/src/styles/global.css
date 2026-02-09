@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-deca: "Lexend Deca", sans-serif;
+  --color-main-bg: hsl(233, 47%, 7%);
+  --color-card-bg: hsl(244, 37%, 16%);
+  --color-accent: hsl(277, 64%, 61%);
+}

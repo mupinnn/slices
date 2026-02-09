@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-*: initial;
+  --color-blue-600: hsl(185, 75%, 39%);
+  --color-navy-950: hsl(229, 23%, 23%);
+  --color-gray-*: initial;
+  --color-gray-100: hsl(225, 10%, 92%);
+  --color-gray-500: hsl(227, 10%, 46%);
+  --font-sans: "Kumbh Sans Variable", sans-serif;
+}
+
+body {
+  background-attachment: fixed;
+  background-image:
+    url("../assets/images/bg-pattern-top.svg"), url("../assets/images/bg-pattern-bottom.svg");
+  background-position:
+    right 50vw bottom 50vh,
+    left 50vw top 50vh;
+  background-repeat: no-repeat;
+}
