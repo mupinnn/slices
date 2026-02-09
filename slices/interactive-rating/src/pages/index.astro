@@ -25,7 +25,7 @@ import thanksIllustration from "../assets/images/illustration-thank-you.svg";
       </p>
       <div class="mt-[26px] flex items-center justify-between">
         {
-          [...Array(5)].keys().map(i => (
+          [...Array(5).keys()].map(i => (
             <div class="flex items-center justify-center">
               <label class="sr-only" for={`rating-${i + 1}`}>
                 Give {i + 1} of 5 rating
