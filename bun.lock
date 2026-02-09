@@ -27,6 +27,23 @@
         "prettier-plugin-tailwindcss": "^0.7.2",
       },
     },
+    "slices/interactive-rating": {
+      "name": "interactive-rating",
+      "dependencies": {
+        "@astrojs/check": "^0.9.6",
+        "@fontsource-variable/overpass": "^5.2.8",
+        "@tailwindcss/vite": "^4.1.18",
+        "astro": "^5.17.1",
+        "astro-icon": "^1.1.5",
+        "tailwindcss": "^4.1.18",
+        "typescript": "^5.9.3",
+      },
+      "devDependencies": {
+        "prettier": "^3.8.1",
+        "prettier-plugin-astro": "^0.14.1",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+      },
+    },
     "slices/nft-preview-card": {
       "name": "nft-preview-card",
       "dependencies": {
@@ -215,6 +232,8 @@
     "@fontsource-variable/kumbh-sans": ["@fontsource-variable/kumbh-sans@5.2.7", "", {}, "sha512-ryUExOjM0qPdWD215y/hWHLtqcyefIIN0tRLnPOC6eYLvP2DYJ1ub0GGSZ6WIg3Hsh0DK6SQKz2dDvAV3cngZg=="],
 
     "@fontsource-variable/outfit": ["@fontsource-variable/outfit@5.2.8", "", {}, "sha512-4oUDCZx/Tcz6HZP423w/niqEH31Gks5IsqHV2ZZz1qKHaVIZdj2f0/S1IK2n8jl6Xo0o3N+3RjNHlV9R73ozQA=="],
+
+    "@fontsource-variable/overpass": ["@fontsource-variable/overpass@5.2.8", "", {}, "sha512-7/gP2f9ylVFYEhdyeHl6JSEcmNQ5QBdDs5BuT4V+FqSvkk9XjwdikmtTJuNTRWevMAhBkTUWf/dm68G2SbMdjQ=="],
 
     "@fontsource-variable/red-hat-display": ["@fontsource-variable/red-hat-display@5.2.8", "", {}, "sha512-OslUyiQ5y9MqU5G020NbJALqY2obalyCoxy+0f9mU2tXmhw35uFTnNQvncuOooxXApKnGCadKh6sdhpSnOAV8Q=="],
 
@@ -723,6 +742,8 @@
     "ini": ["ini@1.3.8", "", {}, "sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew=="],
 
     "inquirer": ["inquirer@9.3.8", "", { "dependencies": { "@inquirer/external-editor": "^1.0.2", "@inquirer/figures": "^1.0.3", "ansi-escapes": "^4.3.2", "cli-width": "^4.1.0", "mute-stream": "1.0.0", "ora": "^5.4.1", "run-async": "^3.0.0", "rxjs": "^7.8.1", "string-width": "^4.2.3", "strip-ansi": "^6.0.1", "wrap-ansi": "^6.2.0", "yoctocolors-cjs": "^2.1.2" } }, "sha512-pFGGdaHrmRKMh4WoDDSowddgjT1Vkl90atobmTeSmcPGdYiwikch/m/Ef5wRaiamHejtw0cUUMMerzDUXCci2w=="],
+
+    "interactive-rating": ["interactive-rating@workspace:slices/interactive-rating"],
 
     "interpret": ["interpret@3.1.1", "", {}, "sha512-6xwYfHbajpoF0xLW+iwLkhwgvLoZDfjYfoFNu8ftMoXINzwuymNLd9u/KmwtdT2GbR+/Cz66otEGEVVUHX9QLQ=="],
 
