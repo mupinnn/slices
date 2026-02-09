@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Kumbh Sans Variable", sans-serif;
+  --color-text-blue: hsl(238, 29%, 16%);
+  --color-text-red: hsl(14, 88%, 65%);
+  --color-text-dark-gray-blue: hsl(237, 12%, 33%);
+  --color-text-gray-blue: hsl(240, 6%, 50%);
+  --color-gradient-violet: hsl(273, 75%, 66%);
+  --color-gradient-blue: hsl(240, 73%, 65%);
+  --color-divider: hsl(240, 5%, 91%);
+}
+
+@layer components {
+  .card-illustration {
+    background-image:
+      url("../assets/images/illustration-woman-online-mobile.svg"),
+      url("../assets/images/bg-pattern-mobile.svg");
+    background-position:
+      top,
+      top 7rem center;
+    background-repeat: no-repeat;
+    background-size: 73%;
+    height: 14rem;
+    position: absolute;
+    top: -6.8rem;
+    width: 100%;
+  }
+
+  @media (width >= 1440px) {
+    .card-illustration {
+      background-image:
+        url("../assets/images/illustration-woman-online-desktop.svg"),
+        url("../assets/images/bg-pattern-desktop.svg");
+      background-position:
+        left -5rem top 3rem,
+        left -34rem top -18.5rem;
+      background-size: 100%, auto;
+      width: 500px;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    .card-illustration::after {
+      background-image: url("../assets/images/illustration-box-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+      height: 184px;
+      left: 0;
+      position: absolute;
+      top: 12.5rem;
+      transform: translateX(-48%);
+      width: 191px;
+    }
+  }
+}
