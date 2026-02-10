@@ -5,6 +5,9 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://mupinnn.github.io",
+  base: "/slices/nft-preview-card",
+
   vite: {
     plugins: [tailwindcss()],
   },

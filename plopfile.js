@@ -5,7 +5,7 @@ export default function (/** @type {import('plop').NodePlopApi} */ plop) {
       {
         type: "input",
         name: "name",
-        message: "Project name (lower-kebab-case):",
+        message: "Project name:",
       },
       {
         type: "list",
@@ -19,7 +19,7 @@ export default function (/** @type {import('plop').NodePlopApi} */ plop) {
         type: "addMany",
         base: "templates/{{template}}",
         templateFiles: "templates/{{template}}/**/*",
-        destination: "slices/{{name}}",
+        destination: "slices/{{kebabCase name}}",
         globOptions: {
           dot: true,
           ignore: ["**/.astro/**", "**/.turbo/**", "**/dist/**", "**/node_modules/**"],

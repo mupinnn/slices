@@ -1,5 +1,5 @@
 {
-  "name": "{{name}}",
+  "name": "{{kebabCase name}}",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
