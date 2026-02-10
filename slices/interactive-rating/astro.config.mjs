@@ -6,7 +6,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mupinnn.github.io",
-  base: "/slices/interactive-rating-card",
+  base: "/slices/interactive-rating",
 
   vite: {
     plugins: [tailwindcss()],
