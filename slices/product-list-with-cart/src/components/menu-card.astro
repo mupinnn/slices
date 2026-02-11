@@ -50,10 +50,14 @@ const desktopImage = await getImage({
   <picture class="relative">
     <source media="" srcset={desktopImage.src} />
     <source media="" srcset={tabletImage.src} />
-    <img src={mobileImage.src} alt="" class="aspect-[16/10.4] rounded-[10px] object-cover" />
+    <img
+      src={mobileImage.src}
+      alt=""
+      class="aspect-[16/10.4] w-full rounded-[10px] object-cover sm:aspect-[9/8.7]"
+    />
 
     <button
-      class="absolute -bottom-5.5 left-1/2 flex h-11 min-w-auto -translate-x-1/2 items-center justify-center gap-2 rounded-full border border-rose-500 bg-white px-6 py-2 text-sm font-semibold text-rose-900"
+      class="absolute -bottom-5.5 left-1/2 flex h-11 -translate-x-1/2 items-center justify-center gap-2 rounded-full border border-rose-500 bg-white px-6 py-2 text-sm font-semibold whitespace-nowrap text-rose-900"
     >
       <CartIcon />
       Add to Cart
