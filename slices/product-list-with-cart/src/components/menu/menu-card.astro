@@ -1,24 +1,14 @@
 ---
 import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
-import CartIcon from "@/assets/assets/images/icon-add-to-cart.svg";
-import IncrementIcon from "@/assets/assets/images/icon-increment-quantity.svg";
-import DecrementIcon from "@/assets/assets/images/icon-decrement-quantity.svg";
 import { formatCurrency } from "@/utils";
+import { type Menu } from "@/types";
+import { MenuAddToCartButton } from "./menu-add-to-cart-button";
 
-interface Props {
-  name: string;
-  category: string;
-  price: number;
-  image: {
-    thumbnail: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-}
+type Props = Menu;
 
-const { name, category, price, image } = Astro.props;
+const menu = Astro.props;
+const { name, category, price, image } = menu;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "@/assets/assets/images/*{jpeg,jpg,png}"
@@ -56,12 +46,11 @@ const desktopImage = await getImage({
       class="aspect-[16/10.4] w-full rounded-[10px] object-cover sm:aspect-[9/8.7]"
     />
 
-    <button
-      class="absolute -bottom-5.5 left-1/2 flex h-11 -translate-x-1/2 items-center justify-center gap-2 rounded-full border border-rose-500 bg-white px-6 py-2 text-sm font-semibold whitespace-nowrap text-rose-900"
-    >
-      <CartIcon />
-      Add to Cart
-    </button>
+    <MenuAddToCartButton
+      {...menu}
+      className="absolute -bottom-5.5 left-1/2 -translate-x-1/2"
+      client:load
+    />
   </picture>
 
   <div class="mt-[38px] flex flex-col gap-[9px] leading-none">

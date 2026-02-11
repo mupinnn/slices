@@ -1,8 +1,8 @@
 ---
 import DefaultLayout from "@/layouts/default-layout.astro";
-import MenuCard from "@/components/menu-card.astro";
+import MenuCard from "@/components/menu/menu-card.astro";
+import { CartCard } from "@/components/cart/cart-card";
 import menus from "@/assets/data.json";
-import IllustrationEmpty from "@/assets/assets/images/illustration-empty-cart.svg";
 ---
 
 <DefaultLayout>
@@ -16,14 +16,6 @@ import IllustrationEmpty from "@/assets/assets/images/illustration-empty-cart.sv
       </div>
     </section>
 
-    <section
-      class="flex h-fit flex-col gap-7 rounded-[10px] bg-white px-6 py-8.5 sm:gap-[35px] sm:pt-5 sm:pb-[38px]"
-    >
-      <h2 class="text-red text-[24px] font-bold">Your Cart (0)</h2>
-      <div class="flex flex-col items-center justify-center gap-4 text-center">
-        <IllustrationEmpty />
-        <p class="text-sm font-semibold text-rose-500">Your added items will appear here</p>
-      </div>
-    </section>
+    <CartCard client:load />
   </main>
 </DefaultLayout>
