@@ -1,0 +1,21 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import MenuCard from "@/components/menu/menu-card.astro";
+import { CartCard } from "@/components/cart/cart-card";
+import menus from "@/assets/data.json";
+---
+
+<DefaultLayout>
+  <main
+    class="mx-auto grid max-w-[1440px] grid-cols-1 gap-4 p-6 sm:px-[112px] sm:py-[90px] lg:gap-8 xl:grid-cols-[1fr_383px]"
+  >
+    <section class="flex flex-col gap-8">
+      <h1 class="text-[38px] leading-[44px] font-bold text-rose-900 sm:text-[40px]">Desserts</h1>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-[35px] lg:grid-cols-3">
+        {menus.map(menu => <MenuCard {...menu} />)}
+      </div>
+    </section>
+
+    <CartCard client:load />
+  </main>
+</DefaultLayout>
