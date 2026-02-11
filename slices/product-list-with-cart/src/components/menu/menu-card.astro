@@ -36,14 +36,16 @@ const desktopImage = await getImage({
 });
 ---
 
-<div class="flex flex-col">
+<div
+  class="[:has([data-selected])]:[&_.thumbnail]:border-red flex flex-col [:has([data-selected])]:[&_.thumbnail]:border-2"
+>
   <picture class="relative">
     <source media="" srcset={desktopImage.src} />
     <source media="" srcset={tabletImage.src} />
     <img
       src={mobileImage.src}
       alt=""
-      class="aspect-[16/10.4] w-full rounded-[10px] object-cover sm:aspect-[9/8.7]"
+      class="thumbnail aspect-[16/10.4] w-full rounded-[10px] object-cover sm:aspect-[9/8.7]"
     />
 
     <MenuAddToCartButton

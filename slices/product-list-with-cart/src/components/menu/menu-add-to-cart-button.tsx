@@ -42,7 +42,7 @@ export function MenuAddToCartButton({
   if (currentItem) {
     return (
       <Button asChild className={`w-3/5 justify-between ${className}`}>
-        <div>
+        <div data-selected>
           <button
             className="flex size-5 cursor-pointer items-center justify-center rounded-full border"
             onClick={() => adjustQuantity("min")}
