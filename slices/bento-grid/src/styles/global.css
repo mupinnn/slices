@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans Variable", sans-serif;
+  --color-purple-*: initial;
+  --color-purple-100: hsl(254, 88%, 90%);
+  --color-purple-500: hsl(256, 67%, 59%);
+  --color-yellow-*: initial;
+  --color-yellow-100: hsl(31, 66%, 93%);
+  --color-yellow-500: hsl(39, 100%, 71%);
+  --color-black: hsl(0, 0%, 7%);
+  --color-white: hsl(0, 0%, 100%);
+}
