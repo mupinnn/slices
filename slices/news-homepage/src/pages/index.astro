@@ -41,10 +41,16 @@ const topPicks = [
 ---
 
 <DefaultLayout>
-  <main class="mx-auto mt-7.5 grid max-w-[1440px] grow grid-cols-1 gap-16">
-    <div class="grid grid-cols-1 gap-6">
-      <img src={imageWeb3.src} alt="" class="aspect-[16/14.1] object-cover" />
-      <h1 class="text-[40px] leading-[38px] font-extrabold">The Bright Future of Web 3.0?</h1>
+  <main class="mx-auto mt-7.5 max-w-[1098px] grow gap-16 lg:mt-[55px] lg:gap-8">
+    <div class="grid grid-cols-1 gap-6" id="highlight">
+      <img
+        src={imageWeb3.src}
+        alt=""
+        class="aspect-[16/14.1] object-cover lg:aspect-auto lg:h-[300px]"
+      />
+      <h1 class="text-[40px] leading-[38px] font-extrabold lg:text-[66px] lg:leading-[60px]">
+        The Bright Future of Web 3.0?
+      </h1>
       <p class="text-dark-grayish-blue -mt-2 text-[14px] leading-[24px]">
         We dive into the next evolution of the web that claims to put the power of the platforms
         back into the hands of the people. But is it really fulfilling its promise?
@@ -52,7 +58,7 @@ const topPicks = [
       <Button class="w-fit">READ MORE</Button>
     </div>
 
-    <div class="bg-very-dark-blue p-5">
+    <div class="bg-very-dark-blue p-5" id="news">
       <h2 class="text-soft-orange text-3xl leading-[44px] font-bold">New</h2>
       <div class="text-off-white divide-grayish-blue mt-6 flex flex-col divide-y">
         {
@@ -68,7 +74,7 @@ const topPicks = [
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-8">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3" id="topPick">
       {
         topPicks.map((top, i) => (
           <div class="text-very-dark-blue group flex cursor-pointer items-center gap-6">
@@ -86,3 +92,56 @@ const topPicks = [
     </div>
   </main>
 </DefaultLayout>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (width >= 64rem) {
+    #highlight {
+      grid-area: highlight;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: 1fr 1fr 90px 90px;
+      grid-template-areas:
+        "image image image image"
+        "image image image image"
+        "title title text text"
+        "title title button button";
+    }
+
+    #highlight > img {
+      grid-area: image;
+    }
+
+    #highlight > h1 {
+      grid-area: title;
+    }
+
+    #highlight > p {
+      grid-area: text;
+    }
+
+    #highlight > button {
+      grid-area: button;
+    }
+
+    #news {
+      grid-area: news;
+    }
+
+    #topPick {
+      grid-area: topPick;
+    }
+
+    main {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: 330px 180px 130px;
+      grid-template-areas:
+        "highlight highlight news"
+        "highlight highlight news"
+        "topPick topPick topPick";
+    }
+  }
+</style>
