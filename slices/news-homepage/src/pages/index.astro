@@ -1,0 +1,88 @@
+---
+import DefaultLayout from "../layouts/default-layout.astro";
+import Button from "../components/ui/button.astro";
+import imageWeb3 from "../assets/images/image-web-3-desktop.jpg";
+import imagePc from "../assets/images/image-retro-pcs.jpg";
+import imageTopLaptop from "../assets/images/image-top-laptops.jpg";
+import imageGaming from "../assets/images/image-gaming-growth.jpg";
+
+const news = [
+  {
+    title: "Hydrogen VS Electric Cars",
+    excerpt: "Will hydrogen-fueled cars ever catch up to EVs?",
+  },
+  {
+    title: "The Downsides of AI Artistry",
+    excerpt: "What are the possible adverse effects of on-demand AI image generation?",
+  },
+  {
+    title: "Is VC Funding Drying Up?",
+    excerpt: "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+  },
+];
+
+const topPicks = [
+  {
+    title: "Reviving Retro PCs",
+    excerpt: "What happens when old PCs are given modern upgrades?",
+    thumbnail: imagePc.src,
+  },
+  {
+    title: "Top 10 Laptops of 2022",
+    excerpt: "Our best picks for various needs and budgets.",
+    thumbnail: imageTopLaptop.src,
+  },
+  {
+    title: "The Growth of Gaming",
+    excerpt: "How the pandemic has sparked fresh opportunities.",
+    thumbnail: imageGaming.src,
+  },
+];
+---
+
+<DefaultLayout>
+  <main class="mx-auto mt-7.5 grid max-w-[1440px] grow grid-cols-1 gap-16">
+    <div class="grid grid-cols-1 gap-6">
+      <img src={imageWeb3.src} alt="" class="aspect-[16/14.1] object-cover" />
+      <h1 class="text-[40px] leading-[38px] font-extrabold">The Bright Future of Web 3.0?</h1>
+      <p class="text-dark-grayish-blue -mt-2 text-[14px] leading-[24px]">
+        We dive into the next evolution of the web that claims to put the power of the platforms
+        back into the hands of the people. But is it really fulfilling its promise?
+      </p>
+      <Button class="w-fit">READ MORE</Button>
+    </div>
+
+    <div class="bg-very-dark-blue p-5">
+      <h2 class="text-soft-orange text-3xl leading-[44px] font-bold">New</h2>
+      <div class="text-off-white divide-grayish-blue mt-6 flex flex-col divide-y">
+        {
+          news.map(n => (
+            <div class="group cursor-pointer py-8 first:pt-0 last:pb-0">
+              <h3 class="group-hover:text-soft-orange text-[20px] font-bold transition-colors">
+                {n.title}
+              </h3>
+              <p class="text-grayish-blue mt-2 text-sm">{n.excerpt}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8">
+      {
+        topPicks.map((top, i) => (
+          <div class="text-very-dark-blue group flex cursor-pointer items-center gap-6">
+            <img src={top.thumbnail} alt="" class="w-[98px] object-cover" />
+            <div class="flex flex-col gap-1">
+              <p class="text-soft-red text-[30px] font-extrabold">0{i + 1}</p>
+              <h3 class="group-hover:text-soft-red text-[16px] font-extrabold transition-colors">
+                {top.title}
+              </h3>
+              <p class="text-dark-grayish-blue text-sm">{top.excerpt}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</DefaultLayout>

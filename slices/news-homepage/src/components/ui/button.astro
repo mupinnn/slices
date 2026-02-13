@@ -1,0 +1,25 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import { tv, type VariantProps } from "tailwind-variants";
+
+const buttonVariants = tv({
+  base: "cursor-pointer flex h-11.5 items-center justify-center gap-2 border px-6 py-2 text-sm whitespace-nowrap font-bold tracking-[4px]",
+  variants: {
+    variant: {
+      primary:
+        "bg-soft-red border-soft-red text-very-dark-blue transition-colors hover:text-off-white hover:bg-very-dark-blue hover:border-very-dark-blue",
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+  },
+});
+
+type Props = HTMLAttributes<"button"> & VariantProps<typeof buttonVariants>;
+
+const { variant, class: cls, ...rest } = Astro.props;
+---
+
+<button {...rest} class:list={buttonVariants({ variant, class: cls })}>
+  <slot />
+</button>

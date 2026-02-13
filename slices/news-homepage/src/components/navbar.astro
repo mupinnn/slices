@@ -1,0 +1,52 @@
+---
+import Logo from "../assets/images/logo.svg";
+import MenuIcon from "../assets/images/icon-menu.svg";
+import CloseIcon from "../assets/images/icon-menu-close.svg";
+---
+
+<nav class="mx-auto flex w-full max-w-[1440px] items-center justify-between">
+  <img src={Logo.src} alt="Logo" class="w-[50px]" />
+
+  <button id="open-drawer-button" class="cursor-pointer md:hidden">
+    <MenuIcon />
+  </button>
+
+  <div
+    id="nav-drawer"
+    class="bg-very-dark-blue/50 md:bg-off-white fixed top-0 right-0 z-50 hidden h-svh w-full md:static md:block md:h-auto md:w-auto"
+  >
+    <div
+      class="bg-off-white ml-auto flex h-full w-[68%] flex-col gap-[86px] px-5.5 py-6.5 md:w-auto md:p-0"
+    >
+      <button id="close-drawer-button" class="ml-auto cursor-pointer md:hidden">
+        <CloseIcon />
+      </button>
+
+      <div
+        class="md:text-dark-grayish-blue md:[&_a]:hover:text-soft-red flex flex-col gap-[21px] text-[18px] md:flex-row md:items-center [&_a]:transition-colors"
+      >
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const openDrawerButton = document.getElementById("open-drawer-button") as HTMLBUttonElement;
+  const closeDrawerButton = document.getElementById("close-drawer-button") as HTMLBUttonElement;
+  const drawer = document.getElementById("nav-drawer") as HTMLDivElement;
+
+  openDrawerButton.addEventListener("click", () => {
+    drawer.classList.remove("hidden");
+    drawer.classList.add("flex");
+  });
+
+  closeDrawerButton.addEventListener("click", () => {
+    drawer.classList.remove("flex");
+    drawer.classList.add("hidden");
+  });
+</script>
