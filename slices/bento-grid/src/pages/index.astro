@@ -11,71 +11,125 @@ import illustrationAiContent from "../assets/images/illustration-ai-content.webp
 ---
 
 <DefaultLayout>
-  <main class="mx-auto grid w-full max-w-[360px] grid-cols-1 gap-7 px-4 py-7.5">
-    <div
-      class="flex flex-col items-center justify-center gap-[22px] rounded-xl bg-purple-500 p-10 text-white"
-    >
-      <h2 class="text-center text-[41px] font-medium text-balance">
-        Social Media <span class="text-yellow-500">10x</span>
-        <span class="italic">Faster</span> with AI
-      </h2>
-      <div class="flex flex-col items-center gap-2">
-        <img src={illustrationFiveStars.src} alt="" class="w-3/4" />
-        <p>Over 4,000 5-star reviews</p>
+  <main
+    class="mx-auto flex w-full max-w-[360px] flex-col gap-7 px-4 py-7.5 min-[1440px]:max-w-[1120px] min-[1440px]:flex-row-reverse min-[1440px]:px-0 min-[1440px]:pt-[82px]"
+  >
+    <div class="flex flex-col gap-7 min-[1440px]:w-3/4 min-[1440px]:gap-7.5">
+      <div class="grid grid-cols-1 gap-7 min-[1440px]:grid-cols-3 min-[1440px]:gap-7.5">
+        <div
+          class="flex flex-col items-center justify-center gap-[22px] rounded-xl bg-purple-500 p-10 text-white min-[1440px]:col-span-2 min-[1440px]:h-[325px]"
+        >
+          <h2 class="text-center text-[41px] font-medium text-balance min-[1440px]:text-[55px]">
+            Social Media <span class="text-yellow-500">10x</span>
+            <span class="italic">Faster</span> with AI
+          </h2>
+          <div class="flex flex-col items-center gap-2">
+            <img src={illustrationFiveStars.src} alt="" class="w-3/4 min-[1440px]:w-1/2" />
+            <p>Over 4,000 5-star reviews</p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-4 rounded-xl bg-white p-4 min-[1440px]:relative min-[1440px]:h-[249px] min-[1440px]:overflow-clip min-[1440px]:p-6"
+        >
+          <img
+            src={illustrationMultiplePlatform.src}
+            alt=""
+            class="min-[1440px]:absolute min-[1440px]:left-6 min-[1440px]:h-[68px] min-[1440px]:min-w-[312px]"
+          />
+          <h2
+            class="text-[24px] font-medium -tracking-[1px] min-[1440px]:mt-auto min-[1440px]:text-[30px] min-[1440px]:leading-[28px]"
+          >
+            Manage multiple accounts and platforms.
+          </h2>
+        </div>
+
+        <div
+          class="flex h-[207px] flex-col overflow-clip rounded-xl bg-yellow-500 p-4 pb-0 min-[1440px]:h-[249px] min-[1440px]:p-6"
+        >
+          <h2
+            class="text-[24px] font-medium -tracking-[1px] min-[1440px]:text-[30px] min-[1440px]:leading-[28px]"
+          >
+            Maintain a consistent posting schedule.
+          </h2>
+          <img
+            src={illustrationConsistentSchedule.src}
+            alt=""
+            class="relative -bottom-[13px] w-[67%] min-[1440px]:w-full"
+          />
+        </div>
+
+        <div
+          class="flex flex-col items-center gap-6 rounded-xl bg-purple-100 p-4 py-8 text-center min-[1440px]:col-start-3 min-[1440px]:row-span-2 min-[1440px]:row-start-1 min-[1440px]:items-start min-[1440px]:overflow-clip min-[1440px]:px-8.5 min-[1440px]:py-12 min-[1440px]:text-left"
+        >
+          <h2
+            class="text-[24px] font-medium -tracking-[1px] min-[1440px]:text-[30px] min-[1440px]:leading-[28px]"
+          >
+            Schedule to social media.
+          </h2>
+          <img
+            src={illustrationSchedulePosts.src}
+            alt=""
+            class="min-[1440px]:relative min-[1440px]:right-0 min-[1440px]:h-[324px] min-[1440px]:min-w-[324px]"
+          />
+          <p>Optimize post timings to publish content at the perfect time for your audience.</p>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-7 min-[1440px]:h-[249px] min-[1440px]:grid-cols-3 min-[1440px]:grid-rows-[226px] min-[1440px]:gap-7.5"
+      >
+        <div
+          class="flex flex-col items-center gap-[41px] overflow-clip rounded-xl bg-purple-500 p-6 text-white min-[1440px]:col-span-2 min-[1440px]:col-start-2 min-[1440px]:h-[249px] min-[1440px]:flex-row min-[1440px]:gap-4"
+        >
+          <img src={illustrationGrowFollowers.src} alt="" class="w-[78%] min-[1440px]:w-[46%]" />
+          <h2
+            class="max-w-3/4 text-center text-[32px] leading-[26px] font-medium -tracking-[1px] min-[1440px]:text-left min-[1440px]:text-[38px] min-[1440px]:leading-[36px]"
+          >
+            Grow followers with non-stop content.
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col rounded-xl bg-white p-6 min-[1440px]:col-start-1 min-[1440px]:row-start-1 min-[1440px]:h-[249px]"
+        >
+          <h2 class="text-[44px] font-medium -tracking-[1px] min-[1440px]:text-[64px]">&gt;56%</h2>
+          <p class="mt-3.5">faster audience growth</p>
+          <img
+            src={illustrationAudienceGrowth.src}
+            alt=""
+            class="mt-6 w-3/5 min-[1440px]:mt-8.5 min-[1440px]:w-[90%]"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 rounded-xl bg-white p-4">
-      <img src={illustrationMultiplePlatform.src} alt="" />
-      <h2 class="text-[24px] font-medium -tracking-[1px]">
-        Manage multiple accounts and platforms.
-      </h2>
-    </div>
+    <div class="flex flex-col gap-7 min-[1440px]:w-[23%] min-[1440px]:gap-7.5">
+      <div class="flex flex-col rounded-xl bg-yellow-100 p-7 min-[1440px]:h-1/2">
+        <h2
+          class="text-[28px] leading-[28px] font-medium -tracking-[1px] min-[1440px]:mt-[51px] min-[1440px]:text-[40px] min-[1440px]:leading-[37px] min-[1440px]:-tracking-[4px]"
+        >
+          Create and schedule content <span class="text-purple-500 italic">quicker.</span>
+        </h2>
+        <img
+          src={illustrationCreatePost.src}
+          alt=""
+          class="mt-[25px] w-[68%] min-[1440px]:mt-5 min-[1440px]:w-full"
+        />
+      </div>
 
-    <div class="flex h-[207px] flex-col overflow-clip rounded-xl bg-yellow-500 p-4 pb-0">
-      <h2 class="text-[24px] font-medium -tracking-[1px]">
-        Maintain a consistent posting schedule.
-      </h2>
-      <img
-        src={illustrationConsistentSchedule.src}
-        alt=""
-        class="relative -bottom-[13px] w-[67%]"
-      />
-    </div>
-
-    <div class="flex flex-col items-center gap-6 rounded-xl bg-purple-100 p-4 py-8 text-center">
-      <h2 class="text-[24px] font-medium -tracking-[1px]">Schedule to social media.</h2>
-      <img src={illustrationSchedulePosts.src} alt="" />
-      <p>Optimize post timings to publish content at the perfect time for your audience.</p>
-    </div>
-
-    <div
-      class="flex flex-col items-center gap-[41px] rounded-xl bg-purple-500 p-6 text-center text-white"
-    >
-      <img src={illustrationGrowFollowers.src} alt="" class="w-[78%]" />
-      <h2 class="max-w-3/4 text-[32px] leading-[26px] font-medium -tracking-[1px]">
-        Grow followers with non-stop content.
-      </h2>
-    </div>
-
-    <div class="flex flex-col rounded-xl bg-white p-6">
-      <h2 class="text-[44px] font-medium -tracking-[1px]">&gt;56%</h2>
-      <p class="mt-3.5">faster audience growth</p>
-      <img src={illustrationAudienceGrowth.src} alt="" class="mt-6 w-3/5" />
-    </div>
-
-    <div class="flex flex-col rounded-xl bg-yellow-100 p-7">
-      <h2 class="text-[28px] leading-[28px] font-medium -tracking-[1px]">
-        Create and schedule content <span class="text-purple-500 italic">quicker.</span>
-      </h2>
-      <img src={illustrationCreatePost.src} alt="" class="mt-[25px] w-[68%]" />
-    </div>
-
-    <div class="flex flex-col rounded-xl bg-yellow-500 p-6">
-      <h2 class="text-[28px] leading-[28px] font-medium -tracking-[1px]">
-        Write your content using AI.
-      </h2>
-      <img src={illustrationAiContent.src} alt="" class="mt-6 w-3/4" />
+      <div class="flex flex-col rounded-xl bg-yellow-500 p-6 min-[1440px]:h-1/2">
+        <h2
+          class="text-[28px] leading-[28px] font-medium -tracking-[1px] min-[1440px]:text-[40px] min-[1440px]:leading-[37px] min-[1440px]:-tracking-[4px]"
+        >
+          Write your content using AI.
+        </h2>
+        <img
+          src={illustrationAiContent.src}
+          alt=""
+          class="mt-6 w-3/4 min-[1440px]:mt-[43px] min-[1440px]:w-full"
+        />
+      </div>
     </div>
   </main>
 </DefaultLayout>
