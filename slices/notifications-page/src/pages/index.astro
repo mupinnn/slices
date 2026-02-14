@@ -154,7 +154,7 @@ const notifications: Notification[] = [
         </span>
       </h1>
 
-      <button id="mark-all-read" class="text-sm font-medium text-gray-600">
+      <button id="mark-all-read" class="cursor-pointer text-sm font-medium text-gray-600">
         Mark all as read
       </button>
     </div>
@@ -162,7 +162,10 @@ const notifications: Notification[] = [
     <div class="flex flex-col gap-2">
       {
         notifications.map(notif => (
-          <div class:list={["flex gap-3 rounded-lg p-4", notif.is_read === false && "bg-navy-50"]}>
+          <button
+            class="data-[unread=false]:bg-navy-50 group flex cursor-pointer gap-3 rounded-lg p-4 text-left"
+            data-unread={notif.is_read}
+          >
             <img src={notif.meta.sender.avatar} alt="" class="size-10" />
             {notif.event_type === "POST_REACT" && (
               <div class="flex flex-col text-sm leading-4.5">
@@ -170,9 +173,7 @@ const notifications: Notification[] = [
                   <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> reacted
                   to your recent post{" "}
                   <span class="font-extrabold text-gray-600">{notif.meta.post_title}</span>
-                  {notif.is_read === false && (
-                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
-                  )}
+                  <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                 </p>
                 <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
               </div>
@@ -183,9 +184,7 @@ const notifications: Notification[] = [
                 <p class="font-medium text-gray-500">
                   <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span>{" "}
                   followed you{" "}
-                  {notif.is_read === false && (
-                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
-                  )}
+                  <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                 </p>
                 <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
               </div>
@@ -197,9 +196,7 @@ const notifications: Notification[] = [
                   <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> has
                   joined your group{" "}
                   <span class="font-extrabold text-blue-950">{notif.meta.group_name}</span>
-                  {notif.is_read === false && (
-                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
-                  )}
+                  <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                 </p>
                 <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
               </div>
@@ -211,9 +208,7 @@ const notifications: Notification[] = [
                   <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> left
                   the group{" "}
                   <span class="font-extrabold text-blue-950">{notif.meta.group_name}</span>
-                  {notif.is_read === false && (
-                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
-                  )}
+                  <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                 </p>
                 <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
               </div>
@@ -224,6 +219,7 @@ const notifications: Notification[] = [
                 <p class="font-medium text-gray-500">
                   <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> sent
                   you a private message{" "}
+                  <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                 </p>
                 <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
                 <p class="border-navy-100 mt-4 rounded-md border p-4 font-medium text-gray-600">
@@ -238,15 +234,34 @@ const notifications: Notification[] = [
                   <p class="font-medium text-gray-500">
                     <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span>{" "}
                     commented on your picture{" "}
+                    <span class="ml-1 hidden size-2 rounded-full bg-red-500 group-data-[unread=false]:inline-block" />
                   </p>
                   <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
                 </div>
                 <img src={notif.meta.thumbnail} alt="" class="aspect-square size-10 rounded-lg" />
               </>
             )}
-          </div>
+          </button>
         ))
       }
     </div>
   </main>
 </DefaultLayout>
+
+<script>
+  const markAllReadButton = document.getElementById("mark-all-read") as HTMLButtonElement;
+  const unreadNotifications = document.querySelectorAll<HTMLButtonElement>("[data-unread=false]");
+
+  markAllReadButton.addEventListener("click", () => {
+    unreadNotifications.forEach(el => {
+      el.dataset.unread = "true";
+    });
+  });
+
+  unreadNotifications.forEach(notifEl => {
+    notifEl.addEventListener("click", e => {
+      const clickedEl = e.currentTarget as HTMLButtonElement;
+      clickedEl.dataset.unread = "true";
+    });
+  });
+</script>
