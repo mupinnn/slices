@@ -1,0 +1,30 @@
+---
+import "@fontsource-variable/plus-jakarta-sans";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Notifications Page - Frontend mentor</title>
+  </head>
+  <body class="flex min-h-screen flex-col items-center p-4 pt-[23px]">
+    <slot />
+
+    <footer class="[&_a]:text-navy-950 mt-10 text-center text-sm text-balance [&_a]:underline">
+      Challenge by <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener noreferrer">Frontend Mentor</a
+      >. Coded by <a
+        href="https://www.frontendmentor.io/profile/mupinnn"
+        target="_blank"
+        rel="noopener noreferrer">@mupinnn</a
+      >
+    </footer>
+  </body>
+</html>

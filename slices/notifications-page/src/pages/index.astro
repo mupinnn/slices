@@ -1,0 +1,252 @@
+---
+import DefaultLayout from "../layouts/default-layout.astro";
+import markWebberAvatar from "../assets/images/avatar-mark-webber.webp";
+import angelaGrayAvatar from "../assets/images/avatar-angela-gray.webp";
+import jacobThompsonAvatar from "../assets/images/avatar-jacob-thompson.webp";
+import rizkyHasanuddinAvatar from "../assets/images/avatar-rizky-hasanuddin.webp";
+import kimberlySmithAvatar from "../assets/images/avatar-kimberly-smith.webp";
+import nathanPetersonAvatar from "../assets/images/avatar-nathan-peterson.webp";
+import annaKimAvatar from "../assets/images/avatar-anna-kim.webp";
+import postThumbnail from "../assets/images/image-chess.webp";
+
+type NotificationSender = {
+  name: string;
+  avatar: string;
+};
+
+type PostReactNotification = {
+  meta: {
+    sender: NotificationSender;
+    post_title: string;
+  };
+  event_type: "POST_REACT";
+};
+
+type GroupJoinNotification = {
+  meta: {
+    sender: NotificationSender;
+    group_name: string;
+  };
+  event_type: "GROUP_JOIN" | "GROUP_LEAVE";
+};
+
+type PostCommentNotification = {
+  meta: {
+    sender: NotificationSender;
+    thumbnail: string;
+  };
+  event_type: "POST_COMMENT";
+};
+
+type DMNotification = {
+  meta: {
+    sender: NotificationSender;
+    content: string;
+  };
+  event_type: "DM";
+};
+
+type UserFollowNotification = {
+  meta: {
+    sender: NotificationSender;
+  };
+  event_type: "USER_FOLLOW";
+};
+
+type Notification = { is_read: boolean } & (
+  | PostReactNotification
+  | GroupJoinNotification
+  | PostCommentNotification
+  | DMNotification
+  | UserFollowNotification
+);
+
+const notifications: Notification[] = [
+  {
+    event_type: "POST_REACT",
+    is_read: false,
+    meta: {
+      sender: {
+        name: "Mark Webber",
+        avatar: markWebberAvatar.src,
+      },
+      post_title: "My first tournament today!",
+    },
+  },
+  {
+    event_type: "USER_FOLLOW",
+    is_read: false,
+    meta: {
+      sender: {
+        name: "Angela Gray",
+        avatar: angelaGrayAvatar.src,
+      },
+    },
+  },
+  {
+    event_type: "GROUP_JOIN",
+    is_read: false,
+    meta: {
+      sender: {
+        name: "Jacob Thompson",
+        avatar: jacobThompsonAvatar.src,
+      },
+      group_name: "Chess Club",
+    },
+  },
+  {
+    event_type: "DM",
+    is_read: true,
+    meta: {
+      sender: {
+        name: "Rizky Hasanuddin",
+        avatar: rizkyHasanuddinAvatar.src,
+      },
+      content:
+        "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+    },
+  },
+  {
+    event_type: "POST_COMMENT",
+    is_read: true,
+    meta: {
+      sender: {
+        name: "Kimberly Smith",
+        avatar: kimberlySmithAvatar.src,
+      },
+      thumbnail: postThumbnail.src,
+    },
+  },
+  {
+    event_type: "POST_REACT",
+    is_read: true,
+    meta: {
+      sender: {
+        name: "Nathan Peterson",
+        avatar: nathanPetersonAvatar.src,
+      },
+      post_title: "5 end-game strategies to increaase your win rate",
+    },
+  },
+  {
+    event_type: "GROUP_LEAVE",
+    is_read: true,
+    meta: {
+      sender: {
+        name: "Anna Kim",
+        avatar: annaKimAvatar.src,
+      },
+      group_name: "Chess Club",
+    },
+  },
+];
+---
+
+<DefaultLayout>
+  <main class="flex w-full flex-col gap-6">
+    <div class="flex items-center justify-between">
+      <h1 class="text-navy-950 text-xl font-extrabold">
+        Notifications
+        <span
+          class="ml-2 rounded-lg bg-blue-950 px-2.5 py-0.5 align-text-bottom text-[16px] text-white"
+        >
+          3
+        </span>
+      </h1>
+
+      <button id="mark-all-read" class="text-sm font-medium text-gray-600">
+        Mark all as read
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      {
+        notifications.map(notif => (
+          <div class:list={["flex gap-3 rounded-lg p-4", notif.is_read === false && "bg-navy-50"]}>
+            <img src={notif.meta.sender.avatar} alt="" class="size-10" />
+            {notif.event_type === "POST_REACT" && (
+              <div class="flex flex-col text-sm leading-4.5">
+                <p class="font-medium text-gray-500">
+                  <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> reacted
+                  to your recent post{" "}
+                  <span class="font-extrabold text-gray-600">{notif.meta.post_title}</span>
+                  {notif.is_read === false && (
+                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
+                  )}
+                </p>
+                <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+              </div>
+            )}
+
+            {notif.event_type === "USER_FOLLOW" && (
+              <div class="flex flex-col text-sm leading-4.5">
+                <p class="font-medium text-gray-500">
+                  <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span>{" "}
+                  followed you{" "}
+                  {notif.is_read === false && (
+                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
+                  )}
+                </p>
+                <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+              </div>
+            )}
+
+            {notif.event_type === "GROUP_JOIN" && (
+              <div class="flex flex-col text-sm leading-4.5">
+                <p class="font-medium text-gray-500">
+                  <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> has
+                  joined your group{" "}
+                  <span class="font-extrabold text-blue-950">{notif.meta.group_name}</span>
+                  {notif.is_read === false && (
+                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
+                  )}
+                </p>
+                <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+              </div>
+            )}
+
+            {notif.event_type === "GROUP_LEAVE" && (
+              <div class="flex flex-col text-sm leading-4.5">
+                <p class="font-medium text-gray-500">
+                  <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> left
+                  the group{" "}
+                  <span class="font-extrabold text-blue-950">{notif.meta.group_name}</span>
+                  {notif.is_read === false && (
+                    <span class="ml-1 inline-block size-2 rounded-full bg-red-500" />
+                  )}
+                </p>
+                <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+              </div>
+            )}
+
+            {notif.event_type === "DM" && (
+              <div class="flex flex-col text-sm leading-4.5">
+                <p class="font-medium text-gray-500">
+                  <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span> sent
+                  you a private message{" "}
+                </p>
+                <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+                <p class="border-navy-100 mt-4 rounded-md border p-4 font-medium text-gray-600">
+                  {notif.meta.content}
+                </p>
+              </div>
+            )}
+
+            {notif.event_type === "POST_COMMENT" && (
+              <>
+                <div class="flex flex-col text-sm leading-4.5">
+                  <p class="font-medium text-gray-500">
+                    <span class="text-navy-950 font-extrabold">{notif.meta.sender.name}</span>{" "}
+                    commented on your picture{" "}
+                  </p>
+                  <p class="mt-0.5 font-medium text-gray-500">1m ago</p>
+                </div>
+                <img src={notif.meta.thumbnail} alt="" class="aspect-square size-10 rounded-lg" />
+              </>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</DefaultLayout>

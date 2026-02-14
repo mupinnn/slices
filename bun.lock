@@ -97,6 +97,23 @@
         "prettier-plugin-tailwindcss": "^0.7.2",
       },
     },
+    "slices/notifications-page": {
+      "name": "notifications-page",
+      "dependencies": {
+        "@astrojs/check": "^0.9.6",
+        "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+        "@tailwindcss/vite": "^4.1.18",
+        "astro": "^5.17.1",
+        "astro-icon": "^1.1.5",
+        "tailwindcss": "^4.1.18",
+        "typescript": "^5.9.3",
+      },
+      "devDependencies": {
+        "prettier": "^3.8.1",
+        "prettier-plugin-astro": "^0.14.1",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+      },
+    },
     "slices/order-summary-card": {
       "name": "order-summary-card",
       "dependencies": {
@@ -333,6 +350,8 @@
     "@fontsource-variable/outfit": ["@fontsource-variable/outfit@5.2.8", "", {}, "sha512-4oUDCZx/Tcz6HZP423w/niqEH31Gks5IsqHV2ZZz1qKHaVIZdj2f0/S1IK2n8jl6Xo0o3N+3RjNHlV9R73ozQA=="],
 
     "@fontsource-variable/overpass": ["@fontsource-variable/overpass@5.2.8", "", {}, "sha512-7/gP2f9ylVFYEhdyeHl6JSEcmNQ5QBdDs5BuT4V+FqSvkk9XjwdikmtTJuNTRWevMAhBkTUWf/dm68G2SbMdjQ=="],
+
+    "@fontsource-variable/plus-jakarta-sans": ["@fontsource-variable/plus-jakarta-sans@5.2.8", "", {}, "sha512-iQecBizIdZxezODNHzOn4SvvRMrZL/S8k4MEXGDynCmUrImVW0VmX+tIAMqnADwH4haXlHSXqMgU6+kcfBQJdw=="],
 
     "@fontsource-variable/red-hat-display": ["@fontsource-variable/red-hat-display@5.2.8", "", {}, "sha512-OslUyiQ5y9MqU5G020NbJALqY2obalyCoxy+0f9mU2tXmhw35uFTnNQvncuOooxXApKnGCadKh6sdhpSnOAV8Q=="],
 
@@ -1117,6 +1136,8 @@
     "node-releases": ["node-releases@2.0.27", "", {}, "sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA=="],
 
     "normalize-path": ["normalize-path@3.0.0", "", {}, "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="],
+
+    "notifications-page": ["notifications-page@workspace:slices/notifications-page"],
 
     "nth-check": ["nth-check@2.1.1", "", { "dependencies": { "boolbase": "^1.0.0" } }, "sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w=="],
 
