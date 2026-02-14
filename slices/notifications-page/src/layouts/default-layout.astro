@@ -12,10 +12,12 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Notifications Page - Frontend mentor</title>
   </head>
-  <body class="flex min-h-screen flex-col items-center p-4 pt-[23px]">
+  <body class="bg-navy-50 flex min-h-screen flex-col items-center">
     <slot />
 
-    <footer class="[&_a]:text-navy-950 mt-10 text-center text-sm text-balance [&_a]:underline">
+    <footer
+      class="[&_a]:text-navy-950 mt-10 px-4 pb-4 text-center text-sm text-balance [&_a]:underline"
+    >
       Challenge by <a
         href="https://www.frontendmentor.io?ref=challenge"
         target="_blank"
