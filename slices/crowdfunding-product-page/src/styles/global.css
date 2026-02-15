@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Commissioner Variable", sans-serif;
+  --color-green-*: initial;
+  --color-green-400: hsl(176, 50%, 47%);
+  --color-green-700: hsl(176, 72%, 28%);
+  --color-gray-*: initial;
+  --color-gray-500: hsl(0, 0%, 48%);
+}

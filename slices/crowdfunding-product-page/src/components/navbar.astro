@@ -1,0 +1,16 @@
+---
+import Logo from "../assets/images/logo.svg";
+import HamburgerIcon from "../assets/images/icon-hamburger.svg";
+import XIcon from "../assets/images/icon-close-menu.svg";
+---
+
+<nav
+  class="fixed inset-x-0 z-50 flex items-center justify-between gap-2 bg-transparent px-5 py-7.5"
+>
+  <Logo />
+
+  <button class="group" data-open="false" id="btn-menu">
+    <HamburgerIcon class="hidden group-data-[open=false]:block" />
+    <XIcon class="hidden group-data-[open=true]:block" />
+  </button>
+</nav>
