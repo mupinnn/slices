@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow", sans-serif;
+  --font-serif: "Fraunces", serif;
+
+  --color-red-*: initial;
+  --color-red-400: hsl(7, 99%, 70%);
+  --color-yellow-*: initial;
+  --color-yellow-500: hsl(51, 100%, 49%);
+  --color-green-*: initial;
+  --color-green-500: hsl(167, 34%, 41%);
+  --color-green-800: hsl(167, 40%, 24%);
+  --color-blue-*: initial;
+  --color-blue-800: hsl(198, 62%, 26%);
+  --color-grey-*: initial;
+  --color-grey-400: hsl(210, 4%, 67%);
+  --color-grey-550: hsl(232, 10%, 55%);
+  --color-grey-600: hsl(213, 9%, 39%);
+  --color-grey-950: hsl(212, 27%, 19%);
+}

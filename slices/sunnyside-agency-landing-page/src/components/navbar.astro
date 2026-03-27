@@ -1,0 +1,43 @@
+---
+import Logo from "../assets/images/logo.svg";
+import HamburgerIcon from "../assets/images/icon-hamburger.svg";
+
+const menu = ["About", "Services", "Projects"];
+---
+
+<nav
+  class="fixed inset-x-0 z-50 flex items-center justify-between gap-2 bg-transparent px-5 py-7.5 md:px-[162px] md:py-[47px]"
+>
+  <Logo class="text-white" />
+
+  <button id="btn-menu">
+    <HamburgerIcon />
+  </button>
+
+  <div
+    id="mobile-menu"
+    class="absolute inset-x-0 top-20 hidden h-svh w-full bg-linear-to-b from-transparent to-black/35 to-10% px-5 md:static md:block md:size-auto md:bg-none md:p-0"
+  >
+    <div
+      class="flex flex-col divide-y divide-gray-500/25 rounded-lg bg-white font-medium md:flex-row md:items-center md:gap-7.5 md:divide-none md:bg-transparent md:text-white"
+    >
+      {
+        menu.map(m => (
+          <a href="#" class="p-5 md:p-0 md:text-[14px]">
+            {m}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuButton = document.getElementById("btn-menu") as HTMLButtonElement;
+  const mobileMenu = document.getElementById("mobile-menu") as HTMLDivElement;
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("block");
+  });
+</script>

@@ -1,0 +1,202 @@
+---
+import { getImage } from "astro:assets";
+import DefaultLayout from "../layouts/default-layout.astro";
+import imageHeaderMobileUrl from "../assets/images/mobile/image-header.jpg";
+import imageHeaderDesktopUrl from "../assets/images/desktop/image-header.jpg";
+import imageTransformMobileUrl from "../assets/images/mobile/image-transform.jpg";
+import imageTransformDesktopUrl from "../assets/images/desktop/image-transform.jpg";
+import imageStandOutMobileUrl from "../assets/images/mobile/image-stand-out.jpg";
+import imageStandOutDesktopUrl from "../assets/images/desktop/image-stand-out.jpg";
+import imageGraphicDesignMobileUrl from "../assets/images/mobile/image-graphic-design.jpg";
+import imageGraphicDesignDesktopUrl from "../assets/images/desktop/image-graphic-design.jpg";
+import imagePhotographyMobileUrl from "../assets/images/mobile/image-photography.jpg";
+import imagePhotographyDesktopUrl from "../assets/images/desktop/image-photography.jpg";
+import imageGalleryConeMobileUrl from "../assets/images/mobile/image-gallery-cone.jpg";
+import imageGalleryConeDesktopUrl from "../assets/images/desktop/image-gallery-cone.jpg";
+import imageGalleryMilkMobileUrl from "../assets/images/mobile/image-gallery-milkbottles.jpg";
+import imageGalleryMilkDesktopUrl from "../assets/images/desktop/image-gallery-milkbottles.jpg";
+import imageGalleryOrangeMobileUrl from "../assets/images/mobile/image-gallery-orange.jpg";
+import imageGalleryOrangeDesktopUrl from "../assets/images/desktop/image-gallery-orange.jpg";
+import imageGallerySugarMobileUrl from "../assets/images/mobile/image-gallery-sugar-cubes.jpg";
+import imageGallerySugarDesktopUrl from "../assets/images/desktop/image-gallery-sugarcubes.jpg";
+import imageAvatarEmily from "../assets/images/image-emily.jpg";
+import imageAvatarThomas from "../assets/images/image-thomas.jpg";
+import imageAvatarJennie from "../assets/images/image-jennie.jpg";
+import ArrowDownIcon from "../assets/images/icon-arrow-down.svg";
+
+const imageHeaderMobile = await getImage({ src: imageHeaderMobileUrl });
+const imageHeaderDesktop = await getImage({ src: imageHeaderDesktopUrl });
+const imageTransformMobile = await getImage({ src: imageTransformMobileUrl });
+const imageTransformDesktop = await getImage({ src: imageTransformDesktopUrl });
+const imageStandOutMobile = await getImage({ src: imageStandOutMobileUrl });
+const imageStandOutDesktop = await getImage({ src: imageStandOutDesktopUrl });
+const imageGraphicDesignMobile = await getImage({ src: imageGraphicDesignMobileUrl });
+const imageGraphicDesignDesktop = await getImage({ src: imageGraphicDesignDesktopUrl });
+const imagePhotographyMobile = await getImage({ src: imagePhotographyMobileUrl });
+const imagePhotographyDesktop = await getImage({ src: imagePhotographyDesktopUrl });
+const imageGalleryConeMobile = await getImage({ src: imageGalleryConeMobileUrl });
+const imageGalleryConeDesktop = await getImage({ src: imageGalleryConeDesktopUrl });
+const imageGalleryMilkMobile = await getImage({ src: imageGalleryMilkMobileUrl });
+const imageGalleryMilkDesktop = await getImage({ src: imageGalleryMilkDesktopUrl });
+const imageGalleryOrangeMobile = await getImage({ src: imageGalleryOrangeMobileUrl });
+const imageGalleryOrangeDesktop = await getImage({ src: imageGalleryOrangeDesktopUrl });
+const imageGallerySugarMobile = await getImage({ src: imageGallerySugarMobileUrl });
+const imageGallerySugarDesktop = await getImage({ src: imageGallerySugarDesktopUrl });
+
+const testimonials = [
+  {
+    avatar: imageAvatarEmily.src,
+    content:
+      "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+    name: "Emily R.",
+    title: "Marketing Director",
+  },
+  {
+    avatar: imageAvatarThomas.src,
+    content:
+      "Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.",
+    name: "Thomas S.",
+    title: "Chief Operating Officer",
+  },
+  {
+    avatar: imageAvatarJennie.src,
+    content:
+      "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+    name: "Jennie F.",
+    title: "Business Owner",
+  },
+];
+---
+
+<DefaultLayout>
+  <main class="flex w-full grow flex-col">
+    <section class="relative">
+      <div
+        class="absolute top-[140px] left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-11"
+      >
+        <h1
+          class="text-center font-serif text-[38px] leading-[46px] font-black tracking-[6px] text-white"
+        >
+          WE ARE CREATIVES
+        </h1>
+        <ArrowDownIcon />
+      </div>
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageHeaderMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageHeaderDesktop.src} />
+        <img src={imageHeaderDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+    </section>
+
+    <picture>
+      <source media="(max-width: 859px)" srcset={imageTransformMobile.src} />
+      <source media="(min-width: 860px)" srcset={imageTransformDesktop.src} />
+      <img src={imageTransformDesktop.src} alt="" class="w-full object-cover" />
+    </picture>
+
+    <section class="flex flex-col items-center justify-center px-8 py-15 text-center">
+      <h2 class="mb-5 text-center font-serif text-[30px] leading-[40px] font-black">
+        Transform your brand
+      </h2>
+      <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
+        We are a full-service creative agency specializing in helping brands grow fast. Engage your
+        clients through compelling visuals that do most of the marketing for you.
+      </p>
+      <a href="#" class="font-serif font-black">LEARN MORE</a>
+    </section>
+
+    <picture>
+      <source media="(max-width: 859px)" srcset={imageStandOutMobile.src} />
+      <source media="(min-width: 860px)" srcset={imageStandOutDesktop.src} />
+      <img src={imageStandOutDesktop.src} alt="" class="w-full object-cover" />
+    </picture>
+
+    <section class="flex flex-col items-center justify-center px-8 py-15 text-center">
+      <h2 class="mb-5 text-center font-serif text-[30px] leading-[40px] font-black">
+        Stand out to the right audience
+      </h2>
+      <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
+        Using a collaborative formula of designers, researchers, photographers, videographers, and
+        copywriters, we'll build and extend your brand in digital places.
+      </p>
+      <a href="#" class="font-serif font-black">LEARN MORE</a>
+    </section>
+
+    <section class="relative">
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageGraphicDesignMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageGraphicDesignDesktop.src} />
+        <img src={imageGraphicDesignDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+      <div
+        class="absolute bottom-[37px] left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-green-800"
+      >
+        <h2 class="font-serif text-[27px] leading-[28px] font-black">Graphic Design</h2>
+        <p class="font-semibold">
+          Great design makes you memorable. We deliver artwork that underscores your brand message
+          and captures potential clients' attention.
+        </p>
+      </div>
+    </section>
+
+    <section class="relative">
+      <picture>
+        <source media="(max-width: 859px)" srcset={imagePhotographyMobile.src} />
+        <source media="(min-width: 860px)" srcset={imagePhotographyDesktop.src} />
+        <img src={imagePhotographyDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+      <div
+        class="absolute bottom-15 left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-blue-800"
+      >
+        <h2 class="font-serif text-[27px] leading-[28px] font-black">Photography</h2>
+        <p class="font-semibold">
+          Increase your credibility by getting the most stunning, high-quality photos that improve
+          your business image.
+        </p>
+      </div>
+    </section>
+
+    <section class="px-7.5 pt-15 pb-22 text-center">
+      <h2 class="text-grey-400 mb-15 font-serif font-black tracking-[4px]">CLIENT TESTIMONIALS</h2>
+      <div class="flex flex-col gap-16">
+        {
+          testimonials.map(testimoni => (
+            <div class="flex flex-col items-center gap-8.5">
+              <img src={testimoni.avatar} alt="" class="size-17 rounded-full" />
+              <p class="text-grey-600 text-[17px] leading-[30px] font-semibold">
+                {testimoni.content}
+              </p>
+              <div class="flex flex-col gap-3">
+                <p class="font-serif leading-4 font-black">{testimoni.name}</p>
+                <p class="text-grey-400 text-sm font-semibold">{testimoni.title}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="grid grid-cols-2">
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageGalleryMilkMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageGalleryMilkDesktop.src} />
+        <img src={imageGalleryMilkDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageGalleryOrangeMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageGalleryOrangeDesktop.src} />
+        <img src={imageGalleryOrangeDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageGalleryConeMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageGalleryConeDesktop.src} />
+        <img src={imageGalleryConeDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+      <picture>
+        <source media="(max-width: 859px)" srcset={imageGallerySugarMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageGallerySugarDesktop.src} />
+        <img src={imageGallerySugarDesktop.src} alt="" class="w-full object-cover" />
+      </picture>
+    </section>
+  </main>
+</DefaultLayout>

@@ -1,0 +1,30 @@
+---
+import Logo from "../assets/images/logo.svg";
+import FacebookIcon from "../assets/images/icon-facebook.svg";
+import InstagramIcon from "../assets/images/icon-instagram.svg";
+import TwitterIcon from "../assets/images/icon-twitter.svg";
+import PinterestIcon from "../assets/images/icon-pinterest.svg";
+
+const menu = ["About", "Services", "Projects"];
+---
+
+<footer
+  class="flex flex-col items-center justify-center bg-[#90D4C5] px-9.5 pt-15 pb-19 text-center"
+>
+  <Logo class="mb-9.5 text-green-800" width={180} height={34} viewBox="0 0 124 24" />
+  <div class="mb-20.5 flex w-full items-center justify-between">
+    {
+      menu.map(m => (
+        <a href="#" class="text-[18px] font-semibold">
+          {m}
+        </a>
+      ))
+    }
+  </div>
+  <div class="flex w-full items-center justify-center gap-6.5">
+    <FacebookIcon />
+    <InstagramIcon />
+    <TwitterIcon />
+    <PinterestIcon />
+  </div>
+</footer>
