@@ -19,3 +19,19 @@
   --color-grey-600: hsl(213, 9%, 39%);
   --color-grey-950: hsl(212, 27%, 19%);
 }
+
+@utility pretty-underline-* {
+  position: relative;
+  &::after {
+    z-index: -1;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 110%;
+    height: 8px;
+    background-color: --value(--color-*);
+    border-radius: calc(infinity* 1px);
+  }
+}

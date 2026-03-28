@@ -72,10 +72,10 @@ const testimonials = [
   <main class="flex w-full grow flex-col">
     <section class="relative">
       <div
-        class="absolute top-[140px] left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-11"
+        class="absolute top-[140px] left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-11 md:top-[197px] md:gap-24"
       >
         <h1
-          class="text-center font-serif text-[38px] leading-[46px] font-black tracking-[6px] text-white"
+          class="text-center font-serif text-[38px] leading-[46px] font-black tracking-[6px] text-white md:text-[60px] md:leading-[60px]"
         >
           WE ARE CREATIVES
         </h1>
@@ -88,86 +88,110 @@ const testimonials = [
       </picture>
     </section>
 
-    <picture>
-      <source media="(max-width: 859px)" srcset={imageTransformMobile.src} />
-      <source media="(min-width: 860px)" srcset={imageTransformDesktop.src} />
-      <img src={imageTransformDesktop.src} alt="" class="w-full object-cover" />
-    </picture>
-
-    <section class="flex flex-col items-center justify-center px-8 py-15 text-center">
-      <h2 class="mb-5 text-center font-serif text-[30px] leading-[40px] font-black">
-        Transform your brand
-      </h2>
-      <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
-        We are a full-service creative agency specializing in helping brands grow fast. Engage your
-        clients through compelling visuals that do most of the marketing for you.
-      </p>
-      <a href="#" class="font-serif font-black">LEARN MORE</a>
-    </section>
-
-    <picture>
-      <source media="(max-width: 859px)" srcset={imageStandOutMobile.src} />
-      <source media="(min-width: 860px)" srcset={imageStandOutDesktop.src} />
-      <img src={imageStandOutDesktop.src} alt="" class="w-full object-cover" />
-    </picture>
-
-    <section class="flex flex-col items-center justify-center px-8 py-15 text-center">
-      <h2 class="mb-5 text-center font-serif text-[30px] leading-[40px] font-black">
-        Stand out to the right audience
-      </h2>
-      <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
-        Using a collaborative formula of designers, researchers, photographers, videographers, and
-        copywriters, we'll build and extend your brand in digital places.
-      </p>
-      <a href="#" class="font-serif font-black">LEARN MORE</a>
-    </section>
-
-    <section class="relative">
-      <picture>
-        <source media="(max-width: 859px)" srcset={imageGraphicDesignMobile.src} />
-        <source media="(min-width: 860px)" srcset={imageGraphicDesignDesktop.src} />
-        <img src={imageGraphicDesignDesktop.src} alt="" class="w-full object-cover" />
+    <div class="flex flex-col md:flex-row-reverse">
+      <picture class="md:basis-1/2">
+        <source media="(max-width: 859px)" srcset={imageTransformMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageTransformDesktop.src} />
+        <img src={imageTransformDesktop.src} alt="" class="size-full object-cover" />
       </picture>
-      <div
-        class="absolute bottom-[37px] left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-green-800"
-      >
-        <h2 class="font-serif text-[27px] leading-[28px] font-black">Graphic Design</h2>
-        <p class="font-semibold">
-          Great design makes you memorable. We deliver artwork that underscores your brand message
-          and captures potential clients' attention.
-        </p>
-      </div>
-    </section>
 
-    <section class="relative">
-      <picture>
-        <source media="(max-width: 859px)" srcset={imagePhotographyMobile.src} />
-        <source media="(min-width: 860px)" srcset={imagePhotographyDesktop.src} />
-        <img src={imagePhotographyDesktop.src} alt="" class="w-full object-cover" />
+      <section
+        class="flex flex-col items-center justify-center px-8 py-15 text-center md:mx-auto md:max-w-[456px] md:basis-1/2 md:items-start md:text-left"
+      >
+        <h2
+          class="text-grey-950 mb-5 font-serif text-[30px] leading-[40px] font-black md:mb-12 md:text-[40px] md:leading-[48px]"
+        >
+          Transform your brand
+        </h2>
+        <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
+          We are a full-service creative agency specializing in helping brands grow fast. Engage
+          your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <a href="#" class="text-grey-950 pretty-underline-yellow-500 font-serif font-black">
+          LEARN MORE
+        </a>
+      </section>
+    </div>
+
+    <div class="flex flex-col md:flex-row">
+      <picture class="md:basis-1/2">
+        <source media="(max-width: 859px)" srcset={imageStandOutMobile.src} />
+        <source media="(min-width: 860px)" srcset={imageStandOutDesktop.src} />
+        <img src={imageStandOutDesktop.src} alt="" class="size-full object-cover" />
       </picture>
-      <div
-        class="absolute bottom-15 left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-blue-800"
-      >
-        <h2 class="font-serif text-[27px] leading-[28px] font-black">Photography</h2>
-        <p class="font-semibold">
-          Increase your credibility by getting the most stunning, high-quality photos that improve
-          your business image.
-        </p>
-      </div>
-    </section>
 
-    <section class="px-7.5 pt-15 pb-22 text-center">
-      <h2 class="text-grey-400 mb-15 font-serif font-black tracking-[4px]">CLIENT TESTIMONIALS</h2>
-      <div class="flex flex-col gap-16">
+      <section
+        class="flex flex-col items-center justify-center px-8 py-15 text-center md:mx-auto md:max-w-[456px] md:basis-1/2 md:items-start md:text-left"
+      >
+        <h2
+          class="text-grey-950 mb-5 font-serif text-[30px] leading-[40px] font-black md:mb-12 md:text-[40px] md:leading-[48px]"
+        >
+          Stand out to the right audience
+        </h2>
+        <p class="text-grey-550 mb-9 font-sans text-[18px] leading-[28px] font-semibold">
+          Using a collaborative formula of designers, researchers, photographers, videographers, and
+          copywriters, we'll build and extend your brand in digital places.
+        </p>
+        <a href="#" class="text-grey-950 pretty-underline-red-400 font-serif font-black">
+          LEARN MORE
+        </a>
+      </section>
+    </div>
+
+    <div class="flex flex-col md:flex-row">
+      <section class="relative md:basis-1/2">
+        <picture>
+          <source media="(max-width: 859px)" srcset={imageGraphicDesignMobile.src} />
+          <source media="(min-width: 860px)" srcset={imageGraphicDesignDesktop.src} />
+          <img src={imageGraphicDesignDesktop.src} alt="" class="w-full object-cover" />
+        </picture>
+        <div
+          class="absolute bottom-[37px] left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-green-800 md:bottom-18 md:max-w-1/2 md:px-0"
+        >
+          <h2 class="font-serif text-[27px] leading-[28px] font-black">Graphic Design</h2>
+          <p class="font-semibold">
+            Great design makes you memorable. We deliver artwork that underscores your brand message
+            and captures potential clients' attention.
+          </p>
+        </div>
+      </section>
+
+      <section class="relative md:basis-1/2">
+        <picture>
+          <source media="(max-width: 859px)" srcset={imagePhotographyMobile.src} />
+          <source media="(min-width: 860px)" srcset={imagePhotographyDesktop.src} />
+          <img src={imagePhotographyDesktop.src} alt="" class="w-full object-cover" />
+        </picture>
+        <div
+          class="absolute bottom-15 left-1/2 flex w-full -translate-x-1/2 flex-col items-center justify-center gap-7.5 px-6 text-center text-blue-800 md:bottom-18 md:max-w-1/2 md:px-0"
+        >
+          <h2 class="font-serif text-[27px] leading-[28px] font-black">Photography</h2>
+          <p class="font-semibold">
+            Increase your credibility by getting the most stunning, high-quality photos that improve
+            your business image.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="px-7.5 pt-15 pb-22 text-center md:px-40 md:pt-38.5 md:pb-44.5">
+      <h2
+        class="text-grey-400 mb-15 font-serif font-black tracking-[4px] md:mb-[78px] md:text-[22px]"
+      >
+        CLIENT TESTIMONIALS
+      </h2>
+      <div class="flex flex-col gap-16 md:flex-row">
         {
           testimonials.map(testimoni => (
-            <div class="flex flex-col items-center gap-8.5">
-              <img src={testimoni.avatar} alt="" class="size-17 rounded-full" />
+            <div class="flex flex-col items-center gap-8.5 md:gap-14.5">
+              <img src={testimoni.avatar} alt="" class="size-17 rounded-full md:size-18" />
               <p class="text-grey-600 text-[17px] leading-[30px] font-semibold">
                 {testimoni.content}
               </p>
               <div class="flex flex-col gap-3">
-                <p class="font-serif leading-4 font-black">{testimoni.name}</p>
+                <p class="text-grey-950 font-serif leading-4 font-black md:text-[18px]">
+                  {testimoni.name}
+                </p>
                 <p class="text-grey-400 text-sm font-semibold">{testimoni.title}</p>
               </div>
             </div>
@@ -176,7 +200,7 @@ const testimonials = [
       </div>
     </section>
 
-    <section class="grid grid-cols-2">
+    <section class="grid grid-cols-2 md:grid-cols-4">
       <picture>
         <source media="(max-width: 859px)" srcset={imageGalleryMilkMobile.src} />
         <source media="(min-width: 860px)" srcset={imageGalleryMilkDesktop.src} />

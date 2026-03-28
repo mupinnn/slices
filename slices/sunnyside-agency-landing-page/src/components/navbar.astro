@@ -6,28 +6,34 @@ const menu = ["About", "Services", "Projects"];
 ---
 
 <nav
-  class="fixed inset-x-0 z-50 flex items-center justify-between gap-2 bg-transparent px-5 py-7.5 md:px-[162px] md:py-[47px]"
+  class="absolute inset-x-0 z-50 flex items-center justify-between gap-2 bg-transparent px-5 py-7.5 md:px-12 md:py-8"
 >
-  <Logo class="text-white" />
+  <Logo class="text-white md:hidden" />
+  <Logo class="hidden text-white md:block" width={180} height={34} viewBox="0 0 124 24" />
 
-  <button id="btn-menu">
+  <button id="btn-menu" class="md:hidden">
     <HamburgerIcon />
   </button>
 
   <div
     id="mobile-menu"
-    class="absolute inset-x-0 top-20 hidden h-svh w-full bg-linear-to-b from-transparent to-black/35 to-10% px-5 md:static md:block md:size-auto md:bg-none md:p-0"
+    class="absolute inset-x-0 top-[100px] hidden h-svh w-full px-5 before:absolute before:-top-4 before:right-5 before:border-b-16 before:border-l-16 before:border-b-white before:border-l-transparent before:content-[''] md:static md:block md:size-auto md:bg-none md:p-0"
   >
     <div
-      class="flex flex-col divide-y divide-gray-500/25 rounded-lg bg-white font-medium md:flex-row md:items-center md:gap-7.5 md:divide-none md:bg-transparent md:text-white"
+      class="flex flex-col items-center bg-white py-10 font-medium md:flex-row md:gap-11.5 md:divide-none md:bg-transparent md:p-0 md:text-white"
     >
       {
         menu.map(m => (
-          <a href="#" class="p-5 md:p-0 md:text-[14px]">
+          <a href="#" class="text-grey-550 mb-7 text-[18px] font-semibold md:m-0 md:text-white">
             {m}
           </a>
         ))
       }
+      <button
+        class="text-grey-950 rounded-full bg-yellow-500 px-7 py-4 font-serif font-bold md:bg-white"
+      >
+        CONTACT
+      </button>
     </div>
   </div>
 </nav>
