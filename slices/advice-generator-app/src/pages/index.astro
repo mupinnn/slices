@@ -6,16 +6,19 @@ import DiceIcon from "../assets/images/icon-dice.svg";
 ---
 
 <DefaultLayout>
-  <main class="px-4 pt-30 min-[1440px]:mx-auto min-[1440px]:max-w-[572px] min-[1440px]:pt-[224px]">
+  <main class="mx-auto max-w-[572px] px-4 pt-30 min-[1440px]:pt-[224px]">
     <div
-      class="relative flex flex-col rounded-lg bg-blue-900 px-6 pt-10 pb-16 text-center font-extrabold min-[1440px]:rounded-2xl"
+      class="relative flex flex-col items-center rounded-lg bg-blue-900 px-6 pt-10 pb-16 text-center font-extrabold min-[1440px]:rounded-2xl min-[1440px]:px-11 min-[1440px]:pt-12 min-[1440px]:pb-18"
     >
-      <p class="text-[10px] tracking-[4px] text-green-300">ADVICE #117</p>
-      <h1 class="mt-6 text-[24px] leading-[32px] text-blue-200">
+      <p class="text-[10px] tracking-[4px] text-green-300 min-[1440px]:text-[12px]">ADVICE #117</p>
+      <h1
+        class="mt-6 text-[24px] leading-[32px] text-blue-200 min-[1440px]:text-[28px] min-[1440px]:leading-[38px]"
+      >
         &ldquo;It is easy to sit up and take notice, what's difficult is getting up and taking
         action.&rdquo;
       </h1>
-      <PatternDividerMobile class="mt-7" />
+      <PatternDividerMobile class="mt-7 min-[1440px]:hidden" />
+      <PatternDividerDesktop class="mt-10 hidden min-[1440px]:block" />
       <button class="absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-full bg-green-300 p-5">
         <DiceIcon />
       </button>
