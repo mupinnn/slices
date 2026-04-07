@@ -10,6 +10,23 @@
         "turbo": "^2.8.3",
       },
     },
+    "slices/advice-generator-app": {
+      "name": "advice-generator-app",
+      "dependencies": {
+        "@astrojs/check": "^0.9.6",
+        "@fontsource-variable/manrope": "^5.2.8",
+        "@tailwindcss/vite": "^4.1.18",
+        "astro": "^5.17.1",
+        "astro-icon": "^1.1.5",
+        "tailwindcss": "^4.1.18",
+        "typescript": "^5.9.3",
+      },
+      "devDependencies": {
+        "prettier": "^3.8.1",
+        "prettier-plugin-astro": "^0.14.1",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+      },
+    },
     "slices/bento-grid": {
       "name": "bento-grid",
       "dependencies": {
@@ -386,6 +403,8 @@
 
     "@fontsource-variable/kumbh-sans": ["@fontsource-variable/kumbh-sans@5.2.7", "", {}, "sha512-ryUExOjM0qPdWD215y/hWHLtqcyefIIN0tRLnPOC6eYLvP2DYJ1ub0GGSZ6WIg3Hsh0DK6SQKz2dDvAV3cngZg=="],
 
+    "@fontsource-variable/manrope": ["@fontsource-variable/manrope@5.2.8", "", {}, "sha512-nc9lOuCRz73UHnovDE2bwXUdghE2SEOc7Aii0qGe3CLyE03W1a7VnY5Z6euRiapiKbCkGS+eXbY3s/kvWeGeSw=="],
+
     "@fontsource-variable/outfit": ["@fontsource-variable/outfit@5.2.8", "", {}, "sha512-4oUDCZx/Tcz6HZP423w/niqEH31Gks5IsqHV2ZZz1qKHaVIZdj2f0/S1IK2n8jl6Xo0o3N+3RjNHlV9R73ozQA=="],
 
     "@fontsource-variable/overpass": ["@fontsource-variable/overpass@5.2.8", "", {}, "sha512-7/gP2f9ylVFYEhdyeHl6JSEcmNQ5QBdDs5BuT4V+FqSvkk9XjwdikmtTJuNTRWevMAhBkTUWf/dm68G2SbMdjQ=="],
@@ -645,6 +664,8 @@
     "@vscode/l10n": ["@vscode/l10n@0.0.18", "", {}, "sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ=="],
 
     "acorn": ["acorn@8.15.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg=="],
+
+    "advice-generator-app": ["advice-generator-app@workspace:slices/advice-generator-app"],
 
     "ajv": ["ajv@8.17.1", "", { "dependencies": { "fast-deep-equal": "^3.1.3", "fast-uri": "^3.0.1", "json-schema-traverse": "^1.0.0", "require-from-string": "^2.0.2" } }, "sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g=="],
 

@@ -1,0 +1,24 @@
+---
+import DefaultLayout from "../layouts/default-layout.astro";
+import PatternDividerDesktop from "../assets/images/pattern-divider-desktop.svg";
+import PatternDividerMobile from "../assets/images/pattern-divider-mobile.svg";
+import DiceIcon from "../assets/images/icon-dice.svg";
+---
+
+<DefaultLayout>
+  <main class="px-4 pt-30 min-[1440px]:mx-auto min-[1440px]:max-w-[572px] min-[1440px]:pt-[224px]">
+    <div
+      class="relative flex flex-col rounded-lg bg-blue-900 px-6 pt-10 pb-16 text-center font-extrabold min-[1440px]:rounded-2xl"
+    >
+      <p class="text-[10px] tracking-[4px] text-green-300">ADVICE #117</p>
+      <h1 class="mt-6 text-[24px] leading-[32px] text-blue-200">
+        &ldquo;It is easy to sit up and take notice, what's difficult is getting up and taking
+        action.&rdquo;
+      </h1>
+      <PatternDividerMobile class="mt-7" />
+      <button class="absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-full bg-green-300 p-5">
+        <DiceIcon />
+      </button>
+    </div>
+  </main>
+</DefaultLayout>
