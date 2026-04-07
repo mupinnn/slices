@@ -14,14 +14,55 @@ import DiceIcon from "../assets/images/icon-dice.svg";
       <h1
         class="mt-6 text-[24px] leading-[32px] text-blue-200 min-[1440px]:text-[28px] min-[1440px]:leading-[38px]"
       >
-        &ldquo;It is easy to sit up and take notice, what's difficult is getting up and taking
-        action.&rdquo;
+        &ldquo;<span id="advice">
+          It is easy to sit up and take notice, what's difficult is getting up and taking action.
+        </span>&rdquo;
       </h1>
       <PatternDividerMobile class="mt-7 min-[1440px]:hidden" />
       <PatternDividerDesktop class="mt-10 hidden min-[1440px]:block" />
-      <button class="absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-full bg-green-300 p-5">
+      <button
+        class="absolute -bottom-8 left-1/2 -translate-x-1/2 cursor-pointer rounded-full bg-green-300 p-5 transition-all hover:drop-shadow-[0_0_16px_var(--color-green-300)] disabled:cursor-not-allowed disabled:opacity-75 data-[loading]:animate-spin"
+        id="btn-roll-advice"
+      >
         <DiceIcon />
       </button>
     </div>
   </main>
 </DefaultLayout>
+
+<script>
+  const btnRollAdvice = document.getElementById("btn-roll-advice");
+  const adviceEl = document.getElementById("advice");
+
+  async function fetchAdvice() {
+    try {
+      const response = await fetch("https://api.adviceslip.com/advice");
+      const result = await response.json();
+      return [result, null];
+    } catch (e) {
+      return [null, e];
+    }
+  }
+
+  btnRollAdvice?.addEventListener("click", async e => {
+    const target = e.currentTarget;
+
+    if (target instanceof HTMLButtonElement) {
+      target.dataset.loading = "true";
+      target.disabled = true;
+
+      const [advice, error] = await fetchAdvice();
+
+      if (adviceEl && advice) {
+        adviceEl.innerText = advice?.slip?.advice;
+      }
+
+      if (adviceEl && error) {
+        adviceEl.innerText = "Something went wrong.";
+      }
+
+      delete target.dataset.loading;
+      target.disabled = false;
+    }
+  });
+</script>
